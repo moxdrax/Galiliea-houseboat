@@ -1,0 +1,154 @@
+    .glass-nav {
+      backdrop-filter: blur(12px);
+      background-color: #1E3A8A;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .dark .glass-nav {
+      background-color: white;
+    }
+
+    #mobile-menu {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translateX(-100%);
+      height: 100%;
+      box-shadow: 5px 0 25px rgba(0, 0, 0, 0.15);
+    }
+
+    #mobile-menu.active {
+      transform: translateX(0);
+    }
+
+    #mobile-menu-overlay.active {
+      opacity: 1 !important;
+      pointer-events: auto !important;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      height: 1px;
+      width: 0;
+      background-color: #eebd2b;
+      /* primary gold */
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateX(-50%);
+    }
+
+    .nav-link:hover {
+      text-shadow: 0 0 8px rgba(238, 189, 43, 0.3);
+    }
+
+    .nav-link:hover::after {
+      width: 80%;
+    }
+
+    .mobile-bottom-nav {
+      background-color: white;
+      border-radius: 24px;
+      margin: 0 auto 24px;
+      width: calc(100% - 32px);
+      max-width: 480px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    .mobile-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      flex: 1;
+      transition: all 0.3s ease;
+    }
+
+    .mobile-nav-item .material-symbols-outlined {
+      font-size: 22px;
+      color: #94a3b8;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-nav-item span:not(.material-symbols-outlined) {
+      font-size: 11px;
+      font-weight: 600;
+      color: #94a3b8;
+      letter-spacing: 0.05em;
+      transition: color 0.3s ease;
+    }
+
+    .mobile-nav-item.active .material-symbols-outlined,
+    .mobile-nav-item.active span:not(.material-symbols-outlined) {
+      color: #1E3A8A;
+      /* Primary Gold */
+    }
+
+    /* Circle Button Specifics */
+    .circle-container {
+      position: absolute;
+      top: -32px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 72px;
+      height: 72px;
+      background-color: #f8f7f6;
+      /* Matches background-light */
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .circle-button {
+      width: 56px;
+      height: 56px;
+      background-color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(92, 101, 232, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .circle-button:active {
+      transform: scale(0.9);
+    }
+
+    .circle-button .material-symbols-outlined {
+      color: #1E3A8A;
+      /* Royal Blue for contrast */
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .circle-label {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      font-weight: 700;
+      color: #9CA3AF;
+      /* Gray by default */
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      pointer-events: none;
+      transition: color 0.3s ease;
+    }
+
+    .circle-label.active {
+      color: #1E3A8A;
+      /* Royal Blue when active */
+    }
+
+    /* Safe Area for modern phones */
+    .safe-area-pt {
+      padding-bottom: env(safe-area-inset-bottom);
+    }
