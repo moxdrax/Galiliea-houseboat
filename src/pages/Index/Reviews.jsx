@@ -202,7 +202,7 @@ const Reviews = () => {
                     {/* Write a review CTA */}
                     <div className="text-center mt-12 relative z-40">
                         <a
-                            href="https://www.google.com/maps/place/Galilea+House+Boat/@11.564012,8.0396381,3z/data=!4m16!1m9!3m8!1s0x3b08832c6484b191:0x25ebd63a52fe91f7!2sGalilea+House+Boat!8m2!3d9.4843132!4d76.3862316!9m1!1b1!16s%2Fg%2F11qg_wrjn5!3m5!1s0x3b08832c6484b191:0x25ebd63a52fe91f7!8m2!3d9.4843132!4d76.3862316!16s%2Fg%2F11qg_wrjn5?entry=ttu&g_ep=EgoyMDI2MDEyNi4wIKXMDSoASAFQAw%3D%3D"
+                            href="https://share.google/NHgHKT8JPISUEBIyW"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-3 bg-gradient-to-r from-[#1a2a5e] to-[#2d4a9e] text-white px-10 py-4 rounded-xl font-bold text-[11px] tracking-[0.25em] transition-all duration-300 uppercase shadow-[0_4px_20px_rgba(30,58,138,0.3)] hover:shadow-[0_8px_30px_rgba(30,58,138,0.5)] hover:scale-105 hover:from-[#1e3a8a] hover:to-[#3b5fc2]"

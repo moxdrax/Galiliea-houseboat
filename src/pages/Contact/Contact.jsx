@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import boat9 from '../../assets/Boat/boat9.avif';
 import '../../styles/Hero.css';
 
@@ -6,6 +6,19 @@ const PAGE_TITLE = 'Contact Us | Galilea Houseboat Alleppey - Kerala Backwater B
 const PAGE_DESCRIPTION = 'Connect with Galilea Houseboat for luxury cruise bookings in Alleppey. Reach us via phone, email, or visit our office. We are here to help you plan your perfect Kerala backwater journey.';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: ''
+    });
+    const [status, setStatus] = useState({
+        submitted: false,
+        submitting: false,
+        info: { error: false, msg: null }
+    });
+
     useEffect(() => {
         document.title = PAGE_TITLE;
         const metaDesc = document.querySelector('meta[name="description"]');
@@ -14,6 +27,50 @@ const Contact = () => {
     }, []);
 
     const floatingClass = "flex w-14 h-14 rounded-full bg-white text-royal-blue items-center justify-center transition-all duration-300 shadow-lg border border-royal-blue/10 hover:scale-110 active:scale-95 group";
+
+    const inputClass = "w-full bg-[#fdfaf5] border border-neutral-200 rounded-lg py-4 px-6 text-neutral-800 placeholder:text-neutral-400 focus:outline-none focus:ring-2 focus:ring-royal-blue/10 transition-all font-light";
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus(prevStatus => ({ ...prevStatus, submitting: true }));
+
+        const scriptURL = "https://script.google.com/macros/s/AKfycbzJovSn9aA3cTmJ10oip0AUhXqqSZE_n_fS08X4uHM59xRtzHCE1JTKKxMqaH4qzq8g/exec";
+
+        try {
+            console.log('Sending inquiry to Google Script...', formData);
+
+            await fetch(scriptURL, {
+                method: 'POST',
+                body: new URLSearchParams(formData),
+                mode: 'no-cors'
+            });
+
+            setStatus({
+                submitted: true,
+                submitting: false,
+                info: { error: false, msg: "Thank you! We'll contact you soon." }
+            });
+            setFormData({
+                name: '',
+                email: '',
+                phone: '',
+                subject: '',
+                message: ''
+            });
+
+        } catch (error) {
+            console.error('Submission error:', error);
+            setStatus({
+                submitted: false,
+                submitting: false,
+                info: { error: true, msg: "Something went wrong. Please try again later." }
+            });
+        }
+
+        setTimeout(() => {
+            setStatus(prev => ({ ...prev, info: { error: false, msg: null } }));
+        }, 5000);
+    };
 
     return (
         <article className="max-w-full overflow-hidden">
@@ -46,87 +103,155 @@ const Contact = () => {
             </header>
 
             <section className="bg-[#f2eee3] dark:bg-[#1a1814] py-24 md:py-32" id="contact-info">
-                <div className="max-w-[1400px] mx-auto px-6 lg:px-20">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-start">
+                <div className="max-w-[1500px] mx-auto px-6 lg:px-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-stretch">
 
-                        <div className="space-y-16 py-4 animate-fade-in-up">
+                        {/* Column 1: Contact info - 3 cols */}
+                        <div className="lg:col-span-3 space-y-12 py-4 animate-fade-in-up">
                             <div className="group">
-                                <span
-                                    className="text-[10px] lg:text-[12px] font-bold tracking-[0.4em] text-royal-blue/60 uppercase block mb-6">OUR
-                                    CONCIERGE</span>
+                                <span className="text-[10px] lg:text-[12px] font-bold tracking-[0.4em] text-royal-blue/60 uppercase block mb-6">OUR CONCIERGE</span>
                                 <div className="space-y-8">
-                                    <div className="flex items-start gap-6 hover:translate-x-2 transition-transform duration-300">
-                                        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-royal-blue/5">
-                                            <span
-                                                className="material-symbols-outlined text-royal-blue text-2xl font-light">person</span>
+                                    <div className="flex items-start gap-4 hover:translate-x-2 transition-transform duration-300">
+                                        <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-royal-blue/5">
+                                            <span className="material-symbols-outlined text-royal-blue text-xl font-light">person</span>
                                         </div>
                                         <div>
-                                            <h4
-                                                className="text-xs font-bold tracking-[0.2em] uppercase mb-1 text-royal-blue dark:text-white">
-                                                Partners</h4>
-                                            <p className="text-xl font-serif italic text-neutral-600 dark:text-neutral-400">Joshy
-                                                Thomas & Johnson Mathew</p>
+                                            <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1 text-royal-blue dark:text-white">Partners</h4>
+                                            <p className="text-lg font-serif italic text-neutral-600 dark:text-neutral-400">Joshy Thomas & Johnson Mathew</p>
                                         </div>
                                     </div>
 
-                                    <div className="flex items-start gap-6 hover:translate-x-2 transition-transform duration-300">
-                                        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-royal-blue/5">
-                                            <span
-                                                className="material-symbols-outlined text-royal-blue text-2xl font-light">call</span>
+                                    <div className="flex items-start gap-4 hover:translate-x-2 transition-transform duration-300">
+                                        <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-royal-blue/5">
+                                            <span className="material-symbols-outlined text-royal-blue text-xl font-light">call</span>
                                         </div>
                                         <div className="space-y-1">
-                                            <h4
-                                                className="text-xs font-bold tracking-[0.2em] uppercase mb-1 text-royal-blue dark:text-white">
-                                                Reservations</h4>
-                                            <a href="tel:+919746814181"
-                                                className="text-xl font-serif italic text-neutral-600 dark:text-neutral-400 hover:text-royal-blue transition-colors block">+91
-                                                9746814181</a>
-                                            <a href="tel:+919895646190"
-                                                className="text-xl font-serif italic text-neutral-600 dark:text-neutral-400 hover:text-royal-blue transition-colors block">+91
-                                                9895646190</a>
+                                            <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1 text-royal-blue dark:text-white">Reservations</h4>
+                                            <a href="tel:+919746814181" className="text-lg font-serif italic text-neutral-600 dark:text-neutral-400 hover:text-royal-blue transition-colors block leading-relaxed">+91 9746814181</a>
+                                            <a href="tel:+919895646190" className="text-lg font-serif italic text-neutral-600 dark:text-neutral-400 hover:text-royal-blue transition-colors block leading-relaxed">+91 9895646190</a>
                                         </div>
                                     </div>
 
-                                    <div className="flex items-start gap-6 hover:translate-x-2 transition-transform duration-300">
-                                        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-royal-blue/5">
-                                            <span
-                                                className="material-symbols-outlined text-royal-blue text-2xl font-light">mail</span>
+                                    <div className="flex items-start gap-4 hover:translate-x-2 transition-transform duration-300">
+                                        <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-royal-blue/5">
+                                            <span className="material-symbols-outlined text-royal-blue text-xl font-light">mail</span>
                                         </div>
                                         <div>
-                                            <h4
-                                                className="text-xs font-bold tracking-[0.2em] uppercase mb-1 text-royal-blue dark:text-white">
-                                                General Inquiry</h4>
-                                            <a href="mailto:galileacruise@gmail.com"
-                                                className="text-xl font-serif italic text-neutral-600 dark:text-neutral-400 hover:text-royal-blue transition-colors">galileacruise@gmail.com</a>
+                                            <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1 text-royal-blue dark:text-white">General Inquiry</h4>
+                                            <a href="mailto:galileacruise@gmail.com" className="text-lg font-serif italic text-neutral-600 dark:text-neutral-400 hover:text-royal-blue transition-colors break-words">galileacruise@gmail.com</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="group border-t border-royal-blue/10 pt-12">
-                                <span
-                                    className="text-[10px] lg:text-[12px] font-bold tracking-[0.4em] text-royal-blue/60 uppercase block mb-6">LOCATION</span>
-                                <div className="flex items-start gap-6 hover:translate-x-2 transition-transform duration-300">
-                                    <div className="w-12 h-12 flex items-center justify-center rounded-full bg-royal-blue/5">
-                                        <span
-                                            className="material-symbols-outlined text-royal-blue text-2xl font-light">location_on</span>
+                            <div className="group border-t border-royal-blue/10 pt-10">
+                                <span className="text-[10px] lg:text-[12px] font-bold tracking-[0.4em] text-royal-blue/60 uppercase block mb-6">LOCATION</span>
+                                <div className="flex items-start gap-4 hover:translate-x-2 transition-transform duration-300">
+                                    <div className="w-10 h-10 flex-shrink-0 flex items-center justify-center rounded-full bg-royal-blue/5">
+                                        <span className="material-symbols-outlined text-royal-blue text-xl font-light">location_on</span>
                                     </div>
                                     <div>
-                                        <h4
-                                            className="text-xs font-bold tracking-[0.2em] uppercase mb-2 text-royal-blue dark:text-white">
-                                            Main Docking Office</h4>
-                                        <p
-                                            className="text-lg font-serif italic leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-sm">
-                                            Kainakary Panchayath - Kuppapuram Rd, Kuttamangalam, Kuppapuram, Kainakary South,
-                                            Kerala 688501
+                                        <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2 text-royal-blue dark:text-white">Main Docking Office</h4>
+                                        <p className="text-base font-serif italic leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-sm">
+                                            Kainakary Panchayath - Kuppapuram Rd, Kuttamangalam, Kuppapuram, Kainakary South, Kerala 688501
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="relative group animate-fade-in-up" style={{ animationDelay: '200ms' }}>
-                            <div className="h-[500px] md:h-[600px] w-full rounded-none overflow-hidden shadow-2xl relative z-10">
+                        {/* Column 2: Contact Form - 5 cols */}
+                        <div className="lg:col-span-5 bg-white/80 dark:bg-[#111] p-8 md:p-12 rounded-[40px] relative z-10 animate-fade-in-up md:hover:shadow-2xl md:hover:shadow-royal-blue/5 transition-all duration-700"
+                            style={{
+                                border: '1px solid rgba(238, 189, 43, 0.2)',
+                                boxShadow: 'inset 0 0 40px rgba(248, 241, 229, 0.5)',
+                            }}>
+                            <div className="mb-8">
+                                <span className="text-[10px] font-bold tracking-[0.4em] text-royal-blue uppercase mb-2 block">Contact Us</span>
+                                <h2 className="text-3xl font-serif italic text-royal-blue dark:text-white">Get in Touch</h2>
+                            </div>
+
+                            <form className="space-y-6" onSubmit={handleSubmit}>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-bold tracking-widest text-royal-blue uppercase pl-1">Full Name</label>
+                                        <input
+                                            type="text"
+                                            placeholder="Your Name"
+                                            className={inputClass}
+                                            value={formData.name}
+                                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                            required
+                                        />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-bold tracking-widest text-royal-blue uppercase pl-1">Email Address</label>
+                                        <input
+                                            type="email"
+                                            placeholder="Your Email"
+                                            className={inputClass}
+                                            value={formData.email}
+                                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                            required
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-bold tracking-widest text-royal-blue uppercase pl-1">Phone Number</label>
+                                        <input
+                                            type="text"
+                                            placeholder="Phone Number"
+                                            className={inputClass}
+                                            value={formData.phone}
+                                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                        />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label className="text-[10px] font-bold tracking-widest text-royal-blue uppercase pl-1">Subject</label>
+                                        <input
+                                            type="text"
+                                            placeholder="Inquiry Subject"
+                                            className={inputClass}
+                                            value={formData.subject}
+                                            onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
+                                        />
+                                    </div>
+                                </div>
+
+                                <div className="space-y-2">
+                                    <label className="text-[10px] font-bold tracking-widest text-royal-blue uppercase pl-1">Message</label>
+                                    <textarea
+                                        placeholder="How can we help you?"
+                                        className={`${inputClass} h-32 resize-none`}
+                                        value={formData.message}
+                                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                                        required
+                                    />
+                                </div>
+
+                                <div className="flex flex-col md:flex-row items-center gap-6">
+                                    <button
+                                        type="submit"
+                                        className="w-full md:w-50 bg-royal-blue text-white font-bold tracking-[0.2em] px-8 py-4 rounded-lg hover:bg-royal-blue/90 transition-all transform hover:-translate-y-1 active:scale-95 uppercase text-[10px] shadow-lg shadow-royal-blue/20 disabled:opacity-50 disabled:transform-none"
+                                        disabled={status.submitting}
+                                    >
+                                        {status.submitting ? 'Sending...' : 'Send Message'}
+                                    </button>
+
+                                    {status.info.msg && (
+                                        <div className={`p-4 rounded-lg ${status.info.error ? 'text-royal-blue' : 'text-royal-blue'} text-[10px] font-bold tracking-widest uppercase animate-pulse shrink-0`}>
+                                            {status.info.msg}
+                                        </div>
+                                    )}
+                                </div>
+                            </form>
+                        </div>
+
+                        {/* Column 3: MapSection - 4 cols */}
+                        <div className="lg:col-span-4 h-full min-h-[500px] animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+                            <div className="h-full w-full rounded-none overflow-hidden relative z-0">
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3935.2872203277957!2d76.38374597502445!3d9.483727990596874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zOcKwMjknMDEuNCJOIDc2wrAyMycxMC44IkU!5e0!3m2!1sen!2sin!4v1770288747438!5m2!1sen!2sin"
                                     className="w-full h-full grayscale brightness-90 hover:grayscale-0 transition-all duration-700 contrast-125"
