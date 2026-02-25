@@ -12,6 +12,8 @@ import About from './pages/About/About'
 import Gallery from './pages/Gallery/Gallery'
 import Contact from './pages/Contact/Contact'
 import Booking from './pages/Booking/Booking'
+import PageNotFound from './pages/404 page/PageNotFound'
+
 const HomePage = () => (
   <>
     <Hero />
@@ -33,6 +35,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/booking" element={<Booking />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />
     </div>
