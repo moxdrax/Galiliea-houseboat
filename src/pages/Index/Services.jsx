@@ -182,10 +182,10 @@ const Services = () => {
                                             {service.icon}
                                         </span>
                                         <div>
-                                            <h4 className="text-[12px] font-handwriting tracking-[0.18em] uppercase mb-3 text-neutral-800">
+                                            <h4 className="text-[12px] font-serif tracking-[0.18em] uppercase mb-3 text-neutral-800">
                                                 {service.title}
                                             </h4>
-                                            <p className="text-neutral-400 font-handwriting text-base leading-relaxed">
+                                            <p className="text-neutral-400 font-serif text-base leading-relaxed">
                                                 {service.description}
                                             </p>
                                         </div>

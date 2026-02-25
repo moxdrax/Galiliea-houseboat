@@ -17,8 +17,8 @@ const TimingDisplay = ({ cruiseType, tier }) => {
     return (
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
             <div className="flex flex-col md:flex-row items-center gap-1.5 md:gap-2.5 text-center">
-                <span className="material-symbols-outlined text-[24px] md:text-[20px] text-royal-blue">schedule</span>
-                <span className="text-[15px] md:text-[16px] text-neutral-700 leading-tight">
+                <span className="material-symbols-outlined text-[24px] md:text-[20px] text-royal-blue font-handwriting">schedule</span>
+                <span className="text-[15px] md:text-[16px] text-neutral-700 leading-tight font-handwriting">
                     {isDay
                         ? 'Cruise time 11.00 am to 5.00 pm'
                         : 'Cruise time 12.00 pm to 9.00 am (Next day)'}
@@ -164,7 +164,7 @@ const FoodMenu = () => {
                                         <div className="text-[10px] tracking-[0.4em] font-handwriting uppercase text-primary mb-2">
                                             {isDay ? 'Day Cruise' : 'Overnight Cruise'}
                                         </div>
-                                        <h3 className="text-3xl md:text-5xl font-handwriting text-royal-blue px-4">
+                                        <h3 className="text-3xl md:text-5xl text-royal-blue px-4 font-handwriting">
                                             {isDeluxe ? 'Deluxe Experience' : 'Premium Experience'}
                                         </h3>
                                         <div className="h-[1px] w-12 bg-primary/20 absolute -right-16 top-1/2"></div>
@@ -324,7 +324,7 @@ const FoodMenu = () => {
                                     {/* Layer 5: Breakfast (Overnight Only) */}
                                     {!isDay && (
                                         <div className="meal-section">
-                                            <h4 className="menu-category-title justify-center mb-4 font-handwriting">
+                                            <h4 className="menu-category-title justify-center mb-4 font-sans">
                                                 <span>Breakfast</span>
                                                 <span className="material-symbols-outlined text-sm">&nbsp;wb_sunny</span>
                                             </h4>
@@ -364,7 +364,7 @@ const FoodMenu = () => {
                                         <span className="text-[#c9a96e] text-lg">✦</span>
                                         <span className="block h-px flex-1 max-w-[120px] bg-gradient-to-l from-transparent to-[#c9a96e]"></span>
                                     </div>
-                                    <p className="text-[#5D4037] text-lg font-handwriting italic">
+                                    <p className="text-[#5D4037] text-lg font-handwriting ">
                                         Note: Menu items are subject to change
                                     </p>
                                 </div>
