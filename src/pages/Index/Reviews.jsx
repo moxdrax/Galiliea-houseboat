@@ -24,6 +24,8 @@ const Reviews = () => {
     const [dotIdx, setDotIdx] = useState(0);    // visible dot
     const autoRef = useRef(null);
     const snapRef = useRef(null);
+    const touchStartRef = useRef(null);
+
 
     const translateX = `${(-(pos / looped.length) * 100).toFixed(6)}%`;
 
@@ -79,6 +81,38 @@ const Reviews = () => {
         startAuto();
     }, [startAuto]);
 
+    // ── swipe handlers ────────────────────────────────────────────────────────
+    const handleTouchStart = (e) => {
+        touchStartRef.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = (e) => {
+        if (!touchStartRef.current) return;
+        const touchEnd = e.changedTouches[0].clientX;
+        const diff = touchStartRef.current - touchEnd;
+
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                const next = posRef.current + 1;
+                posRef.current = next;
+                setAnimated(true);
+                setPos(next);
+                setDotIdx(((next % N) + N) % N);
+                scheduleSnap();
+            } else {
+                const prev = posRef.current - 1;
+                posRef.current = prev;
+                setAnimated(true);
+                setPos(prev);
+                setDotIdx(((prev % N) + N) % N);
+                scheduleSnap();
+            }
+            startAuto();
+        }
+        touchStartRef.current = null;
+    };
+
+
     return (
         <article className="max-w-full overflow-hidden">
             <section className="pt-6 pb-24 md:pb-24 bg-soft-cream dark:bg-background-dark relative" id="reviews">
@@ -97,13 +131,18 @@ const Reviews = () => {
                     {/* Carousel track */}
                     <div className="overflow-hidden">
                         <div
+                            className="touch-pan-y"
                             style={{
                                 display: 'flex',
                                 width: TRACK_W,
                                 transform: `translateX(${translateX})`,
                                 transition: animated ? `transform ${TRANSITION_MS}ms ease-in-out` : 'none',
                             }}
+                            onTouchStart={handleTouchStart}
+                            onTouchEnd={handleTouchEnd}
                         >
+
+
                             {looped.map((review, i) => (
                                 <div
                                     key={i}

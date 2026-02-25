@@ -51,6 +51,8 @@ const Destination = () => {
     const [animated, setAnimated] = useState(true);
     const autoRef = useRef(null);
     const snapRef = useRef(null);
+    const touchStartRef = useRef(null);
+
 
     // ── geometry ──────────────────────────────────────────────────────────────
     // Track width = (looped.length / visibleCount) × container width
@@ -113,6 +115,36 @@ const Destination = () => {
         startAuto(); // reset the 3 s timer
     }, [startAuto]);
 
+    // ── swipe handlers ────────────────────────────────────────────────────────
+    const handleTouchStart = (e) => {
+        touchStartRef.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = (e) => {
+        if (!touchStartRef.current) return;
+        const touchEnd = e.changedTouches[0].clientX;
+        const diff = touchStartRef.current - touchEnd;
+
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                const next = posRef.current + 1;
+                posRef.current = next;
+                setAnimated(true);
+                setPos(next);
+                scheduleSnap();
+            } else {
+                const prev = posRef.current - 1;
+                posRef.current = prev;
+                setAnimated(true);
+                setPos(prev);
+                scheduleSnap();
+            }
+            startAuto();
+        }
+        touchStartRef.current = null;
+    };
+
+
     // ── render ────────────────────────────────────────────────────────────────
     return (
         <article className="max-w-full overflow-hidden">
@@ -162,13 +194,17 @@ const Destination = () => {
                     {/* Carousel track */}
                     <div className="overflow-hidden pb-8">
                         <div
+                            className="touch-pan-y"
                             style={{
                                 display: 'flex',
                                 width: TRACK_W,
                                 transform: `translateX(${translateX})`,
                                 transition: animated ? 'transform 0.5s ease-in-out' : 'none',
                             }}
+                            onTouchStart={handleTouchStart}
+                            onTouchEnd={handleTouchEnd}
                         >
+
                             {looped.map((dest, i) => (
                                 <div
                                     key={i}

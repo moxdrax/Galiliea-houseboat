@@ -18,7 +18,7 @@ const TimingDisplay = ({ cruiseType, tier }) => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
             <div className="flex flex-col md:flex-row items-center gap-1.5 md:gap-2.5 text-center">
                 <span className="material-symbols-outlined text-[24px] md:text-[20px] text-royal-blue">schedule</span>
-                <span className="text-[15px] md:text-[16px] font-handwriting text-neutral-700 leading-tight">
+                <span className="text-[15px] md:text-[16px] text-neutral-700 leading-tight">
                     {isDay
                         ? 'Cruise time 11.00 am to 5.00 pm'
                         : 'Cruise time 12.00 pm to 9.00 am (Next day)'}
@@ -187,12 +187,12 @@ const FoodMenu = () => {
                                 >
                                     {/* Layer 1: Welcome Drink */}
                                     <div className="meal-section">
-                                        <h4 className="menu-category-title justify-center font-handwriting">
+                                        <h4 className="menu-category-title justify-center">
                                             <span>Welcome Drink</span>
                                             <span className="material-symbols-outlined text-sm">&nbsp;glass_cup</span>
                                         </h4>
                                         <div className="mt-2">
-                                            <ul className="menu-item-text font-handwriting">
+                                            <ul className="menu-item-text">
                                                 <li>Lime Juice</li>
                                             </ul>
                                         </div>
@@ -211,7 +211,7 @@ const FoodMenu = () => {
                                                 {isDeluxe && (
                                                     <div>
                                                         <span className="diet-badge diet-badge-veg">Veg</span>
-                                                        <ul className="menu-item-text font-handwriting">
+                                                        <ul className="menu-item-text">
                                                             <li>Rice</li><li>Chapati</li><li>Paneer Masala</li>
                                                             <li>Cauliflower Fry</li><li>Sambar</li><li>Thoran</li>
                                                             <li>Mezhukkupuratty</li><li>Banana Kalan</li>
@@ -222,7 +222,7 @@ const FoodMenu = () => {
                                                 {!isDeluxe && (
                                                     <div>
                                                         <span className="diet-badge diet-badge-veg">Veg</span>
-                                                        <ul className="menu-item-text font-handwriting">
+                                                        <ul className="menu-item-text">
                                                             <li>Rice</li><li>Chapati</li><li>Paneer Masala</li>
                                                             <li>Cauliflower Fry</li><li>Sambar</li><li>Thoran</li>
                                                             <li>Mezhukkupuratty</li><li>Banana Kalan</li>
@@ -247,7 +247,7 @@ const FoodMenu = () => {
                                                 {isDeluxe && (
                                                     <div>
                                                         <span className="diet-badge diet-badge-veg">Veg</span>
-                                                        <ul className="menu-item-text font-handwriting">
+                                                        <ul className="menu-item-text">
                                                             <li>Rice</li><li>Sambar</li><li>Thoran</li>
                                                             <li>Cauliflower Fry</li><li>Mezhukkupuratty</li>
                                                             <li>Yogurt</li><li>Pappadam</li><li>Pickle</li><li>Veg Salad</li>
@@ -257,7 +257,7 @@ const FoodMenu = () => {
                                                 {!isDeluxe && (
                                                     <div>
                                                         <span className="diet-badge diet-badge-veg">Veg</span>
-                                                        <ul className="menu-item-text font-handwriting">
+                                                        <ul className="menu-item-text">
                                                             <li>Rice</li><li>Chapati</li><li>Banana Kalan</li>
                                                             <li>Cauliflower Fry</li><li>Sambar</li><li>Thoran</li>
                                                             <li>Mezhukkupuratty</li><li>Yogurt</li>
@@ -281,12 +281,12 @@ const FoodMenu = () => {
 
                                     {/* Layer 3: Tea & Snacks */}
                                     <div className="meal-section">
-                                        <h4 className="menu-category-title justify-center font-handwriting">
+                                        <h4 className="menu-category-title justify-center">
                                             <span>Tea / Snacks</span>
                                             <span className="material-symbols-outlined text-sm">&nbsp;bakery_dining</span>
                                         </h4>
                                         <div className="mt-2">
-                                            <ul className="menu-item-text font-handwriting">
+                                            <ul className="menu-item-text">
                                                 <li>Tea / Coffee</li>
                                                 <li>Banana Fritters</li>
                                                 <li>Onion Pakoda</li>
@@ -340,13 +340,13 @@ const FoodMenu = () => {
                                                     <>
                                                         <div>
                                                             <span className="diet-badge diet-badge-veg">Veg</span>
-                                                            <ul className="menu-item-text font-handwriting">
+                                                            <ul className="menu-item-text">
                                                                 <li>Bread</li><li>Butter</li><li>Jam</li><li>Idli / Dosa</li>
                                                             </ul>
                                                         </div>
                                                         <div>
                                                             <span className="diet-badge diet-badge-nonveg">Non-Veg</span>
-                                                            <ul className="menu-item-text font-handwriting">
+                                                            <ul className="menu-item-text">
                                                                 <li>Egg Omelet</li>
                                                             </ul>
                                                         </div>

@@ -35,6 +35,8 @@ const Services = () => {
     const [animated, setAnimated] = useState(true);
     const autoRef = useRef(null);
     const snapRef = useRef(null);
+    const touchStartRef = useRef(null);
+
 
     // ── geometry ──────────────────────────────────────────────────────────────
     // Track is (looped.length / visibleCount) × the container width.
@@ -103,6 +105,38 @@ const Services = () => {
         startAuto(); // reset the 3s timer
     }, [startAuto]);
 
+    // ── swipe handlers ────────────────────────────────────────────────────────
+    const handleTouchStart = (e) => {
+        touchStartRef.current = e.touches[0].clientX;
+    };
+
+    const handleTouchEnd = (e) => {
+        if (!touchStartRef.current) return;
+        const touchEnd = e.changedTouches[0].clientX;
+        const diff = touchStartRef.current - touchEnd;
+
+        if (Math.abs(diff) > 50) { // minimum swipe distance
+            if (diff > 0) {
+                // Swiped left -> next
+                const next = posRef.current + 1;
+                posRef.current = next;
+                setAnimated(true);
+                setPos(next);
+                scheduleSnap();
+            } else {
+                // Swiped right -> prev
+                const prev = posRef.current - 1;
+                posRef.current = prev;
+                setAnimated(true);
+                setPos(prev);
+                scheduleSnap();
+            }
+            startAuto(); // reset autoplay
+        }
+        touchStartRef.current = null;
+    };
+
+
     // ── render ────────────────────────────────────────────────────────────────
     return (
         <article className="max-w-full overflow-hidden">
@@ -125,13 +159,18 @@ const Services = () => {
                     {/* Carousel track */}
                     <div className="overflow-hidden">
                         <div
+                            className="touch-pan-y"
                             style={{
                                 display: 'flex',
                                 width: TRACK_W,
                                 transform: `translateX(${translateX})`,
                                 transition: animated ? 'transform 0.5s ease-in-out' : 'none',
                             }}
+                            onTouchStart={handleTouchStart}
+                            onTouchEnd={handleTouchEnd}
                         >
+
+
                             {looped.map((service, i) => (
                                 <div
                                     key={i}
@@ -143,7 +182,7 @@ const Services = () => {
                                             {service.icon}
                                         </span>
                                         <div>
-                                            <h4 className="text-[12px] font-bold font-handwriting tracking-[0.18em] uppercase mb-3 text-neutral-800">
+                                            <h4 className="text-[12px] font-handwriting tracking-[0.18em] uppercase mb-3 text-neutral-800">
                                                 {service.title}
                                             </h4>
                                             <p className="text-neutral-400 font-handwriting text-base leading-relaxed">
