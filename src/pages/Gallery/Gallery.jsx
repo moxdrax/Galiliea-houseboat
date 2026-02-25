@@ -4,7 +4,6 @@ import '../../styles/Hero.css';
 // Image Imports
 import boat9 from '../../assets/Boat/boat9.avif';
 import boat1 from '../../assets/Boat/boat1.avif';
-import boat2 from '../../assets/Boat/boat2.avif';
 import boat4 from '../../assets/Boat/boat4.avif';
 import boat5 from '../../assets/Boat/boat5.avif';
 import boat6 from '../../assets/Boat/boat6.avif';
@@ -15,8 +14,8 @@ import dining2 from '../../assets/Boat/dining2.avif';
 import room1 from '../../assets/Boat/room1.avif';
 import room2 from '../../assets/Boat/room2.avif';
 import toilet from '../../assets/Boat/toilet.avif';
-import sceneries1 from '../../assets/Boat/sceneries1.avif';
-import sceneries2 from '../../assets/Boat/sceneries2.avif';
+// import sceneries1 from '../../assets/Boat/sceneries1.avif';
+// import sceneries2 from '../../assets/Boat/sceneries2.avif';
 
 /* ─── SEO constants ─────────────────────────────────────────────────── */
 const PAGE_TITLE = 'Gallery | Galilea Houseboat – Visual Journey through Kerala Backwaters';
@@ -24,19 +23,18 @@ const PAGE_DESCRIPTION = 'Explore the visual beauty of Galilea Houseboat through
 
 const GALLERY_DATA = [
     { src: boat1, alt: 'Galilea Houseboat Exterior Front', category: 'exterior' },
-    { src: boat6, alt: 'Houseboat Side Profile', category: 'exterior' },
-    { src: boat2, alt: 'Premium Corridor', category: 'exterior' },
-    { src: boat8, alt: 'Evening Snacks and Tea', category: 'exterior' },
-    { src: upperdeck, alt: 'Upper Deck View', category: 'interiors' },
-    { src: boat5, alt: 'Modern Interior Design', category: 'interiors' },
-    { src: boat4, alt: 'Coconut Groves and Waterways', category: 'interiors' },
-    { src: dining1, alt: 'Traditional Kerala Breakfast', category: 'dining' },
-    { src: dining2, alt: 'Gourmet Lunch Spread', category: 'dining' },
-    { src: room1, alt: 'Luxury Master Bedroom', category: 'rooms' },
-    { src: room2, alt: 'Guest Bedroom Suite', category: 'rooms' },
-    { src: toilet, alt: 'Modern En-suite Bathroom', category: 'rooms' },
-    { src: sceneries1, alt: 'Alleppey Backwaters Sunrise', category: 'sceneries' },
-    { src: sceneries2, alt: 'Serene River Views', category: 'sceneries' },
+    { src: boat6, alt: 'Galilea Houseboat Side View', category: 'exterior' },
+    { src: boat8, alt: 'Galilea Houseboat Exterior Front', category: 'exterior' },
+    { src: upperdeck, alt: 'Galilea Houseboat Upper Deck View', category: 'interiors' },
+    { src: boat5, alt: 'Galilea Houseboat Interior View', category: 'interiors' },
+    { src: boat4, alt: 'Galilea Houseboat Interior View', category: 'interiors' },
+    { src: dining1, alt: 'Galilea Houseboat Dining Area', category: 'dining' },
+    { src: dining2, alt: 'Galilea Houseboat Interior View', category: 'interiors' },
+    { src: room1, alt: 'Galilea Houseboat Bedroom', category: 'rooms' },
+    { src: room2, alt: 'Galilea Houseboat Bedroom', category: 'rooms' },
+    { src: toilet, alt: 'Galilea Houseboat Bathroom', category: 'rooms' },
+    // { src: sceneries1, alt: 'Galilea Houseboat Front View', category: 'sceneries' },
+    // { src: sceneries2, alt: 'Galilea Houseboat Back View', category: 'sceneries' },
 ];
 
 const CATEGORIES = [
@@ -45,7 +43,7 @@ const CATEGORIES = [
     { id: 'interiors', label: 'INTERIORS' },
     { id: 'dining', label: 'DINING' },
     { id: 'rooms', label: 'ROOMS' },
-    { id: 'sceneries', label: 'SCENERIES' },
+    // { id: 'sceneries', label: 'SCENERIES' },
 ];
 
 const Gallery = () => {
