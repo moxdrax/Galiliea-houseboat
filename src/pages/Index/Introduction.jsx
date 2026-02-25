@@ -119,9 +119,7 @@ const Introduction = () => {
                                     <span
                                         className="text-[12px] font-bold tracking-[0.3em] text-royal-blue uppercase group-hover:text-[#1E3A8A] transition-colors">READ
                                         MORE ABOUT US</span>
-                                    <div
-                                        className="w-12 h-[1px] bg-royal-blue group-hover:bg-[#1E3A8A] transition-all group-hover:w-20">
-                                    </div>
+                                    
                                     <span
                                         className="material-symbols-outlined text-xs text-royal-blue group-hover:text-[#1E3A8A] transition-colors">east</span>
                                 </Link>
