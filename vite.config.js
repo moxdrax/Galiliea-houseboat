@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://vitejs.dev
 export default defineConfig({
-  base: process.env.VITE_BASE_PATH || '/Galiliea-houseboat',
+  base: process.env.VITE_BASE_PATH || '/Galilea-houseboat',
   plugins: [
     react(),
     tailwindcss(),
