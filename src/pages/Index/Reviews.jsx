@@ -123,7 +123,7 @@ const Reviews = () => {
                         <span className="text-[10px] lg:text-[12px] font-bold tracking-[0.8em] text-primary/60 uppercase block mb-4">
                             TESTIMONIALS
                         </span>
-                        <h2 className="text-2xl lg:text-4xl font-serif text-royal-blue/80">
+                        <h2 className="text-2xl lg:text-4xl text-royal-blue/80">
                             What Our Guests Say
                         </h2>
                     </div>
@@ -170,12 +170,12 @@ const Reviews = () => {
                                         </div>
 
                                         {/* Review text */}
-                                        <p className="text-xl md:text-2xl font-serif  text-neutral-600 dark:text-neutral-300 mb-10 leading-relaxed max-w-3xl">
+                                        <p className="text-xl md:text-2xl  text-neutral-600 dark:text-neutral-300 mb-10 leading-relaxed max-w-3xl">
                                             {review.text}
                                         </p>
 
                                         {/* Name */}
-                                        <p className="font-serif font-bold text-[#181611] dark:text-white tracking-widest text-[11px] uppercase">
+                                        <p className=" font-bold text-[#181611] dark:text-white tracking-widest text-[11px] uppercase">
                                             {review.name}
                                         </p>
                                     </div>

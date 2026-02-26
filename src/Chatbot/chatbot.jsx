@@ -46,7 +46,7 @@ if (!window.KeralaChatbot) {
         showWelcomeMessage() {
             setTimeout(() => {
                 this.addBotMessage(
-                    "Welcome to Galilea Houseboat! I'm here to help you plan your perfect backwater cruise. How can I assist you today?",
+                    "Welcome to Galiliea Houseboat! I'm here to help you plan your perfect backwater cruise. How can I assist you today?",
                     [
                         "FAQ",
                         "View Packages",

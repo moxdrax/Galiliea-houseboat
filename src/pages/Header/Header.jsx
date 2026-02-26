@@ -193,7 +193,7 @@ const Header = () => {
               </svg>
             </div>
             <div className="chat-info">
-              <h3>Galiliea Houseboat</h3>
+              <h3>Galilea Houseboat</h3>
               <p>Online</p>
             </div>
           </div>

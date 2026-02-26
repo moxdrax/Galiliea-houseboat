@@ -27,7 +27,7 @@ const Introduction = () => {
                 <div
                     className="absolute inset-0 flex items-start justify-center lg:pt-8 pointer-events-none select-none opacity-[0.03]">
                     <span
-                        className="text-[12rem] lg:text-[24rem] font-bold text-royal-blue tracking-tighter leading-none whitespace-nowrap">GALILIEA</span>
+                        className="text-[12rem] lg:text-[24rem] font-bold text-royal-blue tracking-tighter leading-none whitespace-nowrap">Galilea</span>
                 </div>
 
                 {/* Studio Metadata Decor (Bolder) */}
@@ -37,7 +37,7 @@ const Introduction = () => {
                         <span
                             className="text-[10px] lg:text-[12px] font-bold tracking-[0.8em] text-primary/60 uppercase block mb-4">STORIES
                             THAT FLOAT</span>
-                        <h2 className="text-2xl lg:text-4xl font-serif text-royal-blue/80">The Galiliea way of water
+                        <h2 className="text-2xl lg:text-4xl text-royal-blue/80">The Galilea way of water
                             living
                         </h2>
                         <div className="w-16 h-[1px] bg-royal-blue/20 mx-auto mt-8"></div>
@@ -85,7 +85,7 @@ const Introduction = () => {
                             {/* Story Card */}
                             <div className="bg-white p-8 md:p-14 border border-white/20 shadow-sm">
                                 <p
-                                    className="text-[16px] md:text-[20px] font-serif text-[#4A4A4A] leading-[1.8] mb-8 first-letter:text-4xl first-letter:font-bold first-letter:text-royal-blue first-letter:mr-[-4px]">
+                                    className="text-[16px] md:text-[20px] text-[#4A4A4A] leading-[1.8] mb-8 first-letter:text-4xl first-letter:font-bold first-letter:text-royal-blue first-letter:mr-[-4px]">
                                     Welcome to Galilea Houseboats, the ultimate luxury backwater experience in Kerala.
                                     Our
                                     service is renowned for offering unparalleled luxury amenities reminiscent of
@@ -94,7 +94,7 @@ const Introduction = () => {
                                     to
                                     indulge in the epitome of luxury and comfort as you embark on a journey with us.
                                 </p>
-                                <p className="text-[16px] md:text-[20px] font-serif text-[#4A4A4A] leading-[1.8] mb-8">
+                                <p className="text-[16px] md:text-[20px] text-[#4A4A4A] leading-[1.8] mb-8">
                                     Choose from our selection of exclusive luxury houseboats, each meticulously designed
                                     to
                                     provide you with a memorable and exotic experience. Whether you desire a soothing
@@ -104,7 +104,7 @@ const Introduction = () => {
                                     conference
                                     rooms, we have the amenities to cater to your every need.
                                 </p>
-                                <p className="text-[16px] md:text-[20px] font-serif text-[#4A4A4A] leading-[1.8] mb-12">
+                                <p className="text-[16px] md:text-[20px] text-[#4A4A4A] leading-[1.8] mb-12">
                                     At Galilea Luxury Houseboats, your safety and comfort are our top priorities. We
                                     provide
                                     our
@@ -119,7 +119,7 @@ const Introduction = () => {
                                     <span
                                         className="text-[12px] font-bold tracking-[0.3em] text-royal-blue uppercase group-hover:text-[#1E3A8A] transition-colors">READ
                                         MORE ABOUT US</span>
-                                    
+
                                     <span
                                         className="material-symbols-outlined text-xs text-royal-blue group-hover:text-[#1E3A8A] transition-colors">east</span>
                                 </Link>

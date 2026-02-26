@@ -240,7 +240,7 @@
         }
 
         .menu-category-title {
-            font-family: 'Kalam', cursive;
+            
             font-weight: 700;
             font-size: 14px;
             color: #1E3A8A;
@@ -261,7 +261,7 @@
         }
 
         .menu-item-text {
-            font-family: 'Kalam', cursive;
+            
             font-size: 15px;
             color: #404040;
             line-height: 1.625;
@@ -293,7 +293,7 @@
 
         .diet-badge {
             font-size: 10px;
-            font-family: 'Kalam', cursive;
+            
             letter-spacing: 0.1em;
             text-transform: uppercase;
             margin-bottom: 0.25rem;

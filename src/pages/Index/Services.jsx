@@ -151,7 +151,7 @@ const Services = () => {
                         <span className="text-[10px] lg:text-[12px] font-bold tracking-[0.8em] text-primary/60 uppercase block mb-4">
                             EXCLUSIVITY
                         </span>
-                        <h2 className="text-2xl lg:text-4xl font-serif text-royal-blue/80">
+                        <h2 className="text-2xl lg:text-4xl text-royal-blue/80">
                             Bespoke Services
                         </h2>
                     </div>
@@ -182,10 +182,10 @@ const Services = () => {
                                             {service.icon}
                                         </span>
                                         <div>
-                                            <h4 className="text-[12px] font-serif tracking-[0.18em] uppercase mb-3 text-neutral-800">
+                                            <h4 className="text-[12px] tracking-[0.18em] uppercase mb-3 text-neutral-800 font-bold">
                                                 {service.title}
                                             </h4>
-                                            <p className="text-neutral-400 font-serif text-base leading-relaxed">
+                                            <p className="text-neutral-400 text-base leading-relaxed">
                                                 {service.description}
                                             </p>
                                         </div>

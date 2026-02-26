@@ -50,19 +50,19 @@ const Footer = () => {
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-12 lg:gap-20 mb-20">
                         <div className="col-span-1 md:col-span-2 space-y-8">
                             <div className="flex flex-col">
-                                <span className="text-3xl lg:text-4xl font-serif text-royal-blue dark:text-white tracking-tight">
+                                <span className="text-3xl lg:text-4xl  text-royal-blue dark:text-white tracking-tight">
                                     Galilea Houseboat
                                 </span>
                                 <span className="text-[11px] font-bold tracking-[0.5em] text-primary uppercase mt-1">
                                     The Name of Trust
                                 </span>
                             </div>
-                            <p className="text-royal-blue/70 dark:text-neutral-400 font-serif leading-relaxed text-lg max-w-md">
+                            <p className="text-royal-blue/70 dark:text-neutral-400  leading-relaxed text-lg max-w-md">
                                 Redefining luxury on the water. Join us for a journey where every detail is curated for the most
                                 discerning travelers seeking solitude and splendor.
                             </p>
                             <div className="flex gap-6">
-                                <a href="https://www.facebook.com/galileahouseboats/"
+                                <a href="https://www.facebook.com/Galileahouseboats/"
                                     className="group relative flex items-center justify-center size-10 rounded-full border border-royal-blue/10 hover:border-royal-blue transition-colors duration-300"
                                     aria-label="Facebook">
                                     <svg className="w-5 h-5 fill-royal-blue group-hover:fill-royal-blue dark:fill-white"
@@ -85,7 +85,7 @@ const Footer = () => {
 
                         <div className="col-span-1">
                             <h4
-                                className="font-serif italic text-2xl text-royal-blue dark:text-white mb-8 border-b border-royal-blue/10 pb-2 inline-block">
+                                className="  text-2xl text-royal-blue dark:text-white mb-8 border-b border-royal-blue/10 pb-2 inline-block">
                                 Explore</h4>
                             <ul className="space-y-4">
                                 <li><a href="/about"
@@ -105,7 +105,7 @@ const Footer = () => {
 
                         <div className="col-span-1">
                             <h4
-                                className="font-serif italic text-2xl text-royal-blue dark:text-white mb-8 border-b border-royal-blue/10 pb-2 inline-block">
+                                className="  text-2xl text-royal-blue dark:text-white mb-8 border-b border-royal-blue/10 pb-2 inline-block">
                                 Contact</h4>
                             <ul className="space-y-6">
                                 <li className="flex items-start gap-4">
@@ -113,7 +113,7 @@ const Footer = () => {
                                     <div className="flex flex-col">
                                         <span
                                             className="text-[11px] font-bold tracking-widest text-royal-blue/40 uppercase mb-1">Call</span>
-                                        <span className="text-royal-blue dark:text-white font-serif">+91 9746814181 / +91
+                                        <span className="text-[14px] text-royal-blue dark:text-white ">+91 9746814181 / +91
                                             9895646190</span>
                                     </div>
                                 </li>
@@ -122,7 +122,7 @@ const Footer = () => {
                                     <div className="flex flex-col">
                                         <span
                                             className="text-[11px] font-bold tracking-widest text-royal-blue/40 uppercase mb-1">Inquiries</span>
-                                        <span className="text-royal-blue dark:text-white font-serif">galileacruise@gmail.com</span>
+                                        <span className="text-[14px] text-royal-blue dark:text-white ">galileacruise@gmail.com</span>
                                     </div>
                                 </li>
                                 <li className="flex items-start gap-4">
@@ -130,7 +130,7 @@ const Footer = () => {
                                     <div className="flex flex-col">
                                         <span
                                             className="text-[11px] font-bold tracking-widest text-royal-blue/40 uppercase mb-1">Location</span>
-                                        <span className="text-royal-blue dark:text-white font-serif leading-relaxed">
+                                        <span className="text-[14px] text-royal-blue dark:text-white  leading-relaxed">
                                             Kainakary, Alleppey, Kerala 688501
                                         </span>
                                     </div>
@@ -140,7 +140,7 @@ const Footer = () => {
                     </div>
 
                     <div className="pt-8 border-t border-royal-blue/10 flex flex-col md:flex-row justify-between items-center gap-6">
-                        <p className="text-[12px] font-bold tracking-[0.3em] text-royal-blue/40 uppercase">© 2025 galilieahouseboat.com
+                        <p className="text-[12px] font-bold tracking-[0.3em] text-royal-blue/40 uppercase">© 2026 Galileahouseboat.com
                         </p>
                         <div className="flex gap-8">
                             <a href="#"

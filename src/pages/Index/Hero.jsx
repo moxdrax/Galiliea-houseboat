@@ -11,6 +11,10 @@ const heroSlides = [
     { src: boat4, alt: 'Lush Kerala backwater landscape seen from Galilea Houseboat during a sunset cruise' },
 ];
 
+/* ─── SEO constants ─────────────────────────────────────────────────── */
+const PAGE_TITLE = 'Home | Galilea Houseboat - Luxury Houseboat Experience in Alleppey Backwaters, Kerala';
+const PAGE_DESCRIPTION = 'Book the ultimate luxury houseboat cruise in Alleppey, Kerala with Galilea Houseboat. Experience premium AC stays, authentic Kerala cuisine, and serene backwater views.';
+
 const Hero = () => {
     const [current, setCurrent] = useState(0);
     const timerRef = useRef(null);
@@ -20,12 +24,18 @@ const Hero = () => {
     }, []);
 
     useEffect(() => {
+        document.title = PAGE_TITLE;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc) metaDesc.setAttribute('content', PAGE_DESCRIPTION);
+    }, []);
+
+    useEffect(() => {
         timerRef.current = setInterval(next, 5000);
         return () => clearInterval(timerRef.current);
     }, [next]);
 
     return (
-        
+
         <article className="max-w-full overflow-hidden">
             <header className="relative h-[60vh] md:h-screen w-full overflow-hidden">
                 {/* Slides */}
@@ -68,7 +78,7 @@ const Hero = () => {
                                 className="text-white font-bold tracking-[0.5em] text-[10px] md:text-[12px] uppercase mb-4 block drop-shadow-sm reveal-up"
                                 style={{ animationDelay: "0.2s", opacity: 0 }}>KERALA
                                 BACKWATERS</span>
-                            <h1 className="text-5xl md:text-8xl font-serif italic text-white mb-6 drop-shadow-2xl reveal-up"
+                            <h1 className="text-5xl md:text-8xl   text-white mb-6 drop-shadow-2xl reveal-up"
                                 style={{ animationDelay: "0.2s" }}>
                                 The Golden Voyage
                             </h1>

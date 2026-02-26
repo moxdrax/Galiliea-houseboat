@@ -184,7 +184,7 @@ const Booking = () => {
                     </div>
 
                     <div className="flex-1 text-center lg:text-left text-white max-w-2xl reveal-up">
-                        <h1 className="text-5xl md:text-7xl font-serif uppercase tracking-tight leading-tight mb-8 drop-shadow-lg">
+                        <h1 className="text-5xl md:text-7xl  uppercase tracking-tight leading-tight mb-8 drop-shadow-lg">
                             MAKE YOUR RESERVATION
                         </h1>
                         <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed drop-shadow-md">

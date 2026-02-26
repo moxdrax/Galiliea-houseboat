@@ -186,7 +186,7 @@ const Destination = () => {
                         <span className="text-[10px] lg:text-[12px] font-bold tracking-[0.8em] text-primary/60 uppercase block mt-7">
                             CURATED JOURNEYS
                         </span>
-                        <h2 className="text-2xl lg:text-4xl font-serif text-royal-blue/80 mt-5">
+                        <h2 className="text-2xl lg:text-4xl  text-royal-blue/80 mt-5">
                             Enchanting Waterways
                         </h2>
                     </div>
@@ -221,7 +221,7 @@ const Destination = () => {
                                             <h3 className="text-white text-2xl lg:text-3xl font-light mb-3">
                                                 {dest.title}
                                             </h3>
-                                            <p className="text-white/80 text-sm lg:text-[15px] font-light leading-relaxed italic max-w-xs">
+                                            <p className="text-white/80 text-sm lg:text-[15px] font-light leading-relaxed  max-w-xs">
                                                 {dest.description}
                                             </p>
                                         </div>

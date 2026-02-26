@@ -106,7 +106,7 @@ const Gallery = () => {
                                 VISUAL JOURNEY
                             </span>
                             <h1
-                                className="text-5xl md:text-8xl font-serif italic text-white mb-6 drop-shadow-2xl reveal-up"
+                                className="text-5xl md:text-8xl   text-white mb-6 drop-shadow-2xl reveal-up"
                                 style={{ animationDelay: '0.2s' }}>
                                 Gallery
                             </h1>
@@ -160,7 +160,7 @@ const Gallery = () => {
                                     loading="lazy"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex items-end p-4">
-                                    <p className="text-white font-serif italic text-sm">
+                                    <p className="text-white   text-sm">
                                         {img.alt}
                                     </p>
                                 </div>
@@ -183,7 +183,7 @@ const Gallery = () => {
                                     loading="lazy"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                                    <p className="text-white font-serif italic text-base">
+                                    <p className="text-white   text-base">
                                         {img.alt}
                                     </p>
                                 </div>
@@ -193,7 +193,7 @@ const Gallery = () => {
 
 
                     {filteredImages.length === 0 && (
-                        <div className="text-center py-20 text-neutral-400 font-serif italic">
+                        <div className="text-center py-20 text-neutral-400  ">
                             No images found in this category.
                         </div>
                     )}

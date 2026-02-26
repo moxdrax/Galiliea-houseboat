@@ -10,6 +10,7 @@ body {
     position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-sans);
 }
 
 .hide-scrollbar {
@@ -35,7 +36,5 @@ body {
     --color-royal-blue: #1E3A8A;
     --color-ivory-luxury: #FCFAF7;
 
-    --font-display: "Plus Jakarta Sans", sans-serif;
-    --font-serif: "Cormorant Garamond", serif;
-    --font-handwriting: "Kalam", cursive;
+    --font-sans: "Plus Jakarta Sans", sans-serif;
 }

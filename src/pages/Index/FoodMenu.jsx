@@ -17,8 +17,8 @@ const TimingDisplay = ({ cruiseType, tier }) => {
     return (
         <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
             <div className="flex flex-col md:flex-row items-center gap-1.5 md:gap-2.5 text-center">
-                <span className="material-symbols-outlined text-[24px] md:text-[20px] text-royal-blue font-handwriting">schedule</span>
-                <span className="text-[15px] md:text-[16px] text-neutral-700 leading-tight font-handwriting">
+                <span className="material-symbols-outlined text-[24px] md:text-[20px] text-royal-blue">schedule</span>
+                <span className="text-[15px] md:text-[16px] text-neutral-700 leading-tight">
                     {isDay
                         ? 'Cruise time 11.00 am to 5.00 pm'
                         : 'Cruise time 12.00 pm to 9.00 am (Next day)'}
@@ -27,7 +27,7 @@ const TimingDisplay = ({ cruiseType, tier }) => {
             {showAC && (
                 <div className="flex flex-col md:flex-row items-center gap-1.5 md:gap-2.5 text-center">
                     <span className="material-symbols-outlined text-[24px] md:text-[20px] text-royal-blue">ac_unit</span>
-                    <span className="text-[15px] md:text-[16px] font-handwriting text-neutral-700 leading-tight">
+                    <span className="text-[15px] md:text-[16px] text-neutral-700 leading-tight">
                         {acText}
                     </span>
                 </div>
@@ -114,7 +114,7 @@ const FoodMenu = () => {
                         <span className="text-[10px] lg:text-[12px] font-bold tracking-[0.8em] text-primary/60 uppercase block mb-4">
                             Food Menu
                         </span>
-                        <h2 className="text-2xl lg:text-4xl font-serif italic text-royal-blue/80">A Taste of the Sun</h2>
+                        <h2 className="text-2xl lg:text-4xl  text-royal-blue/80">A Taste of the Sun</h2>
                         <h3 className="sr-only">Menu Selection</h3>
                     </div>
 
@@ -161,10 +161,10 @@ const FoodMenu = () => {
                                 <div className="text-center mb-16 relative">
                                     <div className="inline-block relative">
                                         <div className="h-[1px] w-12 bg-primary/20 absolute -left-16 top-1/2"></div>
-                                        <div className="text-[10px] tracking-[0.4em] font-handwriting uppercase text-primary mb-2">
+                                        <div className="text-[10px] tracking-[0.4em] uppercase text-primary mb-2">
                                             {isDay ? 'Day Cruise' : 'Overnight Cruise'}
                                         </div>
-                                        <h3 className="text-3xl md:text-5xl text-royal-blue px-4 font-handwriting">
+                                        <h3 className="text-3xl md:text-5xl text-royal-blue px-4">
                                             {isDeluxe ? 'Deluxe Experience' : 'Premium Experience'}
                                         </h3>
                                         <div className="h-[1px] w-12 bg-primary/20 absolute -right-16 top-1/2"></div>
@@ -200,7 +200,7 @@ const FoodMenu = () => {
 
                                     {/* Layer 2: Lunch */}
                                     <div className="meal-section">
-                                        <h4 className="menu-category-title justify-center mb-4 font-handwriting">
+                                        <h4 className="menu-category-title justify-center mb-4">
                                             <span>{isDay ? 'Lunch' : 'Lunch'}</span>
                                             <span className="material-symbols-outlined text-sm">&nbsp;restaurant</span>
                                         </h4>
@@ -227,7 +227,7 @@ const FoodMenu = () => {
                                                             <li>Cauliflower Fry</li><li>Sambar</li><li>Thoran</li>
                                                             <li>Mezhukkupuratty</li><li>Banana Kalan</li>
                                                             <li>Pappadam</li><li>Pickle</li><li>Veg Salad</li>
-                                                            <li className="italic font-serif">Payasam (Vermicelli)</li>
+                                                            <li>Payasam (Vermicelli)</li>
                                                         </ul>
                                                     </div>
                                                 )}
@@ -262,7 +262,7 @@ const FoodMenu = () => {
                                                             <li>Cauliflower Fry</li><li>Sambar</li><li>Thoran</li>
                                                             <li>Mezhukkupuratty</li><li>Yogurt</li>
                                                             <li>Pappadam</li><li>Pickle</li><li>Veg Salad</li>
-                                                            <li className="italic font-serif">Payasam (Vermicelli)</li>
+                                                            <li>Payasam (Vermicelli)</li>
                                                         </ul>
                                                     </div>
                                                 )}
@@ -297,7 +297,7 @@ const FoodMenu = () => {
                                     {/* Layer 4: Dinner (Overnight Only) */}
                                     {!isDay && (
                                         <div className="meal-section">
-                                            <h4 className="menu-category-title justify-center mb-4 font-handwriting">
+                                            <h4 className="menu-category-title justify-center mb-4">
                                                 <span>Dinner</span>
                                                 <span className="material-symbols-outlined text-sm">&nbsp;nights_stay</span>
                                             </h4>
@@ -364,7 +364,7 @@ const FoodMenu = () => {
                                         <span className="text-[#c9a96e] text-lg">✦</span>
                                         <span className="block h-px flex-1 max-w-[120px] bg-gradient-to-l from-transparent to-[#c9a96e]"></span>
                                     </div>
-                                    <p className="text-[#5D4037] text-lg font-handwriting ">
+                                    <p className="text-[#5D4037] text-lg ">
                                         Note: Menu items are subject to change
                                     </p>
                                 </div>

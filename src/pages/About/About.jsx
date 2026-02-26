@@ -42,7 +42,7 @@ const storyRows = [
         textFirst: true,          // text left, image right
         borderColor: 'border-[#C5A059]/20',
         paragraphs: [
-            <>The <span className="text-royal-blue italic">Kettuvallam</span> (traditional rice barge) is a
+            <>The <span className="text-royal-blue ">Kettuvallam</span> (traditional rice barge) is a
                 majestic symbol of Kerala's backwater heritage. Historically, these massive vessels were the
                 primary mode of transport for carrying rice and spices from the fertile fields of Kuttanad
                 to the port of Cochin.</>,
@@ -105,7 +105,7 @@ const About = () => {
                                 OUR LEGACY
                             </span>
                             <h1
-                                className="text-5xl md:text-8xl font-serif italic text-white mb-6 drop-shadow-2xl reveal-up"
+                                className="text-5xl md:text-8xl   text-white mb-6 drop-shadow-2xl reveal-up"
                                 style={{ animationDelay: '0.2s' }}>
                                 About Us
                             </h1>
@@ -129,10 +129,10 @@ const About = () => {
                                     <span className="text-[10px] lg:text-[12px] font-bold tracking-[0.4em] text-royal-blue/60 uppercase block mb-4">
                                         {row.tag}
                                     </span>
-                                    <h2 className="text-3xl lg:text-5xl font-serif text-royal-blue dark:text-white mb-8">
+                                    <h2 className="text-3xl lg:text-5xl  text-royal-blue dark:text-white mb-8">
                                         {row.heading}
                                     </h2>
-                                    <div className="space-y-6 text-[#555555] dark:text-neutral-400 font-serif leading-relaxed text-base md:text-lg">
+                                    <div className="space-y-6 text-[#555555] dark:text-neutral-400  leading-relaxed text-base md:text-lg">
                                         {row.paragraphs.map((p, pi) => <p key={pi}>{p}</p>)}
                                     </div>
                                 </div>
@@ -164,7 +164,7 @@ const About = () => {
                         <span className="text-[10px] lg:text-[12px] font-bold tracking-[0.4em] text-royal-blue/60 uppercase block mb-4">
                             PHILOSOPHY
                         </span>
-                        <h2 className="text-3xl lg:text-5xl font-serif text-royal-blue dark:text-white mb-8">
+                        <h2 className="text-3xl lg:text-5xl  text-royal-blue dark:text-white mb-8">
                             Pillars of Galilea
                         </h2>
                     </div>
@@ -175,10 +175,10 @@ const About = () => {
                                 <div className="w-20 h-20 mb-8 mx-auto flex items-center justify-center rounded-full bg-primary/10 transition-colors duration-300">
                                     <span className="material-symbols-outlined text-primary text-4xl font-light">{p.icon}</span>
                                 </div>
-                                <h4 className="text-sm font-bold tracking-[0.2em] uppercase mb-4 text-royal-blue dark:text-white text-center font-serif font-bold">
+                                <h4 className="text-sm font-bold tracking-[0.2em] uppercase mb-4 text-royal-blue dark:text-white text-center  font-bold">
                                     {p.title}
                                 </h4>
-                                <p className="text-neutral-500 dark:text-neutral-400 font-light text-base leading-relaxed font-serif text-center">
+                                <p className="text-neutral-500 dark:text-neutral-400 font-light text-base leading-relaxed  text-center">
                                     {p.desc}
                                 </p>
                             </div>

@@ -90,7 +90,7 @@ const Contact = () => {
                                 GET IN TOUCH
                             </span>
                             <h1
-                                className="text-5xl md:text-8xl font-serif italic text-white mb-6 drop-shadow-2xl reveal-up"
+                                className="text-5xl md:text-8xl   text-white mb-6 drop-shadow-2xl reveal-up"
                                 style={{ animationDelay: '0.2s' }}>
                                 Contact
                             </h1>
@@ -117,7 +117,7 @@ const Contact = () => {
                                         </div>
                                         <div>
                                             <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1 text-royal-blue dark:text-white">Partners</h4>
-                                            <p className="text-lg font-serif italic text-neutral-600 dark:text-neutral-400">Joshy Thomas & Johnson Mathew</p>
+                                            <p className="text-[14px]   text-neutral-600 dark:text-neutral-400">Joshy Thomas & Johnson Mathew</p>
                                         </div>
                                     </div>
 
@@ -127,8 +127,8 @@ const Contact = () => {
                                         </div>
                                         <div className="space-y-1">
                                             <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1 text-royal-blue dark:text-white">Reservations</h4>
-                                            <a href="tel:+919746814181" className="text-lg font-serif italic text-neutral-600 dark:text-neutral-400 hover:text-royal-blue transition-colors block leading-relaxed">+91 9746814181</a>
-                                            <a href="tel:+919895646190" className="text-lg font-serif italic text-neutral-600 dark:text-neutral-400 hover:text-royal-blue transition-colors block leading-relaxed">+91 9895646190</a>
+                                            <a href="tel:+919746814181" className="text-[14px]   text-neutral-600 dark:text-neutral-400 hover:text-royal-blue transition-colors block leading-relaxed">+91 9746814181</a>
+                                            <a href="tel:+919895646190" className="text-[14px]   text-neutral-600 dark:text-neutral-400 hover:text-royal-blue transition-colors block leading-relaxed">+91 9895646190</a>
                                         </div>
                                     </div>
 
@@ -138,7 +138,7 @@ const Contact = () => {
                                         </div>
                                         <div>
                                             <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-1 text-royal-blue dark:text-white">General Inquiry</h4>
-                                            <a href="mailto:galileacruise@gmail.com" className="text-lg font-serif italic text-neutral-600 dark:text-neutral-400 hover:text-royal-blue transition-colors break-words">galileacruise@gmail.com</a>
+                                            <a href="mailto:galileacruise@gmail.com" className="text-lg   text-neutral-600 dark:text-neutral-400 hover:text-royal-blue transition-colors break-words text-[14px]">galileacruise@gmail.com</a>
                                         </div>
                                     </div>
                                 </div>
@@ -152,7 +152,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-[10px] font-bold tracking-[0.2em] uppercase mb-2 text-royal-blue dark:text-white">Main Docking Office</h4>
-                                        <p className="text-base font-serif italic leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-sm">
+                                        <p className="text-[14px] text-base   leading-relaxed text-neutral-600 dark:text-neutral-400 max-w-sm">
                                             Kainakary Panchayath - Kuppapuram Rd, Kuttamangalam, Kuppapuram, Kainakary South, Kerala 688501
                                         </p>
                                     </div>
@@ -168,7 +168,7 @@ const Contact = () => {
                             }}>
                             <div className="mb-8">
                                 <span className="text-[10px] font-bold tracking-[0.4em] text-royal-blue uppercase mb-2 block">Contact Us</span>
-                                <h2 className="text-3xl font-serif italic text-royal-blue dark:text-white">Get in Touch</h2>
+                                <h2 className="text-3xl   text-royal-blue dark:text-white">Get in Touch</h2>
                             </div>
 
                             <form className="space-y-6" onSubmit={handleSubmit}>
