@@ -1,5 +1,5 @@
-import '../../styles/Footer.css'
 import fishImg from '../../assets/fish.png'
+import { Link } from 'react-router-dom'
 const Footer = () => {
     return (
         <>
@@ -88,17 +88,17 @@ const Footer = () => {
                                 className="  text-2xl text-royal-blue dark:text-white mb-8 border-b border-royal-blue/10 pb-2 inline-block">
                                 Explore</h4>
                             <ul className="space-y-4">
-                                <li><a href="/about"
+                                <li><Link to="/about"
                                     className="text-[14px] font-bold tracking-[0.2em] text-royal-blue/60 hover:text-royal-blue transition-colors duration-300 uppercase block">The
-                                    Journey</a></li>
-                                <li><a href="/gallery"
+                                    Journey</Link></li>
+                                <li><Link to="/gallery"
                                     className="text-[14px] font-bold tracking-[0.2em] text-royal-blue/60 hover:text-royal-blue transition-colors duration-300 uppercase block">The
-                                    Gallery</a></li>
-                                <li><a href="/booking"
-                                    className="text-[13px] font-bold tracking-[0.2em] text-royal-blue/60 hover:text-royal-blue transition-colors duration-300 uppercase block">Reservations</a>
+                                    Gallery</Link></li>
+                                <li><Link to="/booking"
+                                    className="text-[13px] font-bold tracking-[0.2em] text-royal-blue/60 hover:text-royal-blue transition-colors duration-300 uppercase block">Reservations</Link>
                                 </li>
-                                <li><a href="/contact"
-                                    className="text-[13px] font-bold tracking-[0.2em] text-royal-blue/60 hover:text-royal-blue transition-colors duration-300 uppercase block">Connect</a>
+                                <li><Link to="/contact"
+                                    className="text-[13px] font-bold tracking-[0.2em] text-royal-blue/60 hover:text-royal-blue transition-colors duration-300 uppercase block">Connect</Link>
                                 </li>
                             </ul>
                         </div>
