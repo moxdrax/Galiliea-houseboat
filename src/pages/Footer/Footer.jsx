@@ -1,3 +1,4 @@
+import '../../styles/Footer.css'
 import fishImg from '../../assets/fish.png'
 import { Link } from 'react-router-dom'
 const Footer = () => {
