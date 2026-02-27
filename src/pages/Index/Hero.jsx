@@ -6,14 +6,14 @@ import boat6 from '../../assets/Boat/boat6.avif';
 import boat4 from '../../assets/Boat/boat4.avif';
 
 const heroSlides = [
-    { src: boat1, alt: 'Galilea luxury houseboat sailing on the Alleppey backwaters at golden hour, Kerala' },
+    { src: boat1, alt: 'Galilea premium houseboat sailing on the Alleppey backwaters at golden hour, Kerala' },
     { src: boat6, alt: 'Scenic Kerala backwater view from the upper deck of Galilea Houseboat, Alleppey' },
     { src: boat4, alt: 'Lush Kerala backwater landscape seen from Galilea Houseboat during a sunset cruise' },
 ];
 
 /* ─── SEO constants ─────────────────────────────────────────────────── */
-const PAGE_TITLE = 'Home | Galilea Houseboat - Luxury Houseboat Experience in Alleppey Backwaters, Kerala';
-const PAGE_DESCRIPTION = 'Book the ultimate luxury houseboat cruise in Alleppey, Kerala with Galilea Houseboat. Experience premium AC stays, authentic Kerala cuisine, and serene backwater views.';
+const PAGE_TITLE = 'Home | Galilea Houseboat - Premium Houseboat Experience in Alleppey Backwaters, Kerala';
+const PAGE_DESCRIPTION = 'Book the ultimate premium houseboat cruise in Alleppey, Kerala with Galilea Houseboat. Experience premium AC stays, authentic Kerala cuisine, and serene backwater views.';
 
 const Hero = () => {
     const [current, setCurrent] = useState(0);
@@ -78,7 +78,7 @@ const Hero = () => {
                                 className="text-white font-bold tracking-[0.5em] text-[10px] md:text-[12px] uppercase mb-4 block drop-shadow-sm reveal-up"
                                 style={{ animationDelay: "0.2s", opacity: 0 }}>KERALA
                                 BACKWATERS</span>
-                            <h1 className="text-5xl md:text-8xl   text-white mb-6 drop-shadow-2xl reveal-up"
+                            <h1 className="text-5xl md:text-8xl   text-white mb-6 drop-shadow-2xl fade-in-delayed"
                                 style={{ animationDelay: "0.2s" }}>
                                 The Golden Voyage
                             </h1>

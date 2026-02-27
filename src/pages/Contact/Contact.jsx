@@ -19,6 +19,15 @@ const Contact = () => {
         info: { error: false, msg: null }
     });
 
+    const validateEmail = (email) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    };
+
+    const validatePhone = (phone) => {
+        // Basic phone validation: at least 10 digits
+        return /^\+?[\d\s-]{10,}$/.test(phone);
+    };
+
     useEffect(() => {
         document.title = PAGE_TITLE;
         const metaDesc = document.querySelector('meta[name="description"]');
@@ -32,7 +41,27 @@ const Contact = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setStatus(prevStatus => ({ ...prevStatus, submitting: true }));
+
+        // Validation
+        if (!validateEmail(formData.email)) {
+            setStatus({
+                submitted: false,
+                submitting: false,
+                info: { error: true, msg: "Please enter a valid email address." }
+            });
+            return;
+        }
+
+        if (formData.phone && !validatePhone(formData.phone)) {
+            setStatus({
+                submitted: false,
+                submitting: false,
+                info: { error: true, msg: "Please enter a valid phone number (min 10 digits)." }
+            });
+            return;
+        }
+
+        setStatus(prevStatus => ({ ...prevStatus, submitting: true, info: { error: false, msg: null } }));
 
         const scriptURL = "https://script.google.com/macros/s/AKfycbzJovSn9aA3cTmJ10oip0AUhXqqSZE_n_fS08X4uHM59xRtzHCE1JTKKxMqaH4qzq8g/exec";
 
@@ -91,7 +120,7 @@ const Contact = () => {
                             </span>
                             <h1
                                 className="text-5xl md:text-8xl   text-white mb-6 drop-shadow-2xl reveal-up"
-                                style={{ animationDelay: '0.2s' }}>
+                                style={{ animationDelay: '0.2s', opacity: 0  }}>
                                 Contact
                             </h1>
                             <div className="flex items-center justify-center gap-4 fade-in-delayed">
@@ -201,11 +230,13 @@ const Contact = () => {
                                     <div className="space-y-2">
                                         <label className="text-[10px] font-bold tracking-widest text-royal-blue uppercase pl-1">Phone Number</label>
                                         <input
-                                            type="text"
+                                            type="tel"
                                             placeholder="Phone Number"
                                             className={inputClass}
                                             value={formData.phone}
+                                            maxLength={10}
                                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                            required
                                         />
                                     </div>
                                     <div className="space-y-2">
@@ -231,20 +262,24 @@ const Contact = () => {
                                     />
                                 </div>
 
-                                <div className="flex flex-col md:flex-row items-center gap-6">
-                                    <button
-                                        type="submit"
-                                        className="w-full md:w-50 bg-royal-blue text-white font-bold tracking-[0.2em] px-8 py-4 rounded-lg hover:bg-royal-blue/90 transition-all transform hover:-translate-y-1 active:scale-95 uppercase text-[10px] shadow-lg shadow-royal-blue/20 disabled:opacity-50 disabled:transform-none"
-                                        disabled={status.submitting}
-                                    >
-                                        {status.submitting ? 'Sending...' : 'Send Message'}
-                                    </button>
+                                <div className="flex flex-col sm:flex-row items-center gap-6 pt-4">
+                                    <div className="w-full sm:w-auto">
+                                        <button
+                                            type="submit"
+                                            className="w-full sm:w-[200px] bg-royal-blue text-white font-bold tracking-[0.2em] px-8 py-5 rounded-lg hover:bg-royal-blue/90 transition-all transform hover:-translate-y-1 active:scale-95 uppercase text-[10px] shadow-lg shadow-royal-blue/20 disabled:opacity-50 disabled:transform-none whitespace-nowrap"
+                                            disabled={status.submitting}
+                                        >
+                                            {status.submitting ? 'Sending...' : 'Send Message'}
+                                        </button>
+                                    </div>
 
-                                    {status.info.msg && (
-                                        <div className={`p-4 rounded-lg ${status.info.error ? 'text-royal-blue' : 'text-royal-blue'} text-[10px] font-bold tracking-widest uppercase animate-pulse shrink-0`}>
-                                            {status.info.msg}
-                                        </div>
-                                    )}
+                                    <div className="min-h-[20px] flex items-center">
+                                        {status.info.msg && (
+                                            <div className={`text-[9px] font-bold tracking-widest uppercase ${status.info.error ? 'text-red-500' : 'text-royal-blue'} animate-pulse`}>
+                                                {status.info.msg}
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                             </form>
                         </div>
