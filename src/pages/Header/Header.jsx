@@ -65,7 +65,7 @@ const Header = () => {
           <div className="absolute left-1/2 -translate-x-1/2 lg:relative lg:left-0 lg:translate-x-0 flex items-center group">
             <Link to="/" className="transition-transform duration-500 group-hover:scale-105">
               <img src={logo} alt="Galilea Houseboat"
-                className="h-[80px] sm:h-[90px] md:h-[100px] lg:h-[105px] w-auto" />
+                className="h-[100px] sm:h-[90px] md:h-[100px] lg:h-[100px] w-auto" />
             </Link>
           </div>
 

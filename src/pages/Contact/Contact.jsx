@@ -120,7 +120,7 @@ const Contact = () => {
                             </span>
                             <h1
                                 className="text-5xl md:text-8xl   text-white mb-6 drop-shadow-2xl reveal-up"
-                                style={{ animationDelay: '0.2s', opacity: 0  }}>
+                                style={{ animationDelay: '0.2s', opacity: 0 }}>
                                 Contact
                             </h1>
                             <div className="flex items-center justify-center gap-4 fade-in-delayed">
