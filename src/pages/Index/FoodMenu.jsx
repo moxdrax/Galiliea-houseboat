@@ -51,16 +51,17 @@ const FishAnimations = memo(() => {
 
     return (
         <>
-            {/* Hanging Fishing Rod & Hook */}
-            <div className="absolute top-[-210px] left-0 z-50 opacity-90 pointer-events-none drop-shadow-sm">
-                <svg className="hook-animate" width="200" height="400" viewBox="0 0 200 400" fill="none"
+            {/* <div className="absolute top-[-800px] left-0 z-50 opacity-90 pointer-events-none drop-shadow-sm">
+                <svg className="hook-animate" width="200" height="1200" viewBox="0 0 200 1200" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M-20 200 Q 60 100 120 50" stroke="#1E3A8A" strokeWidth="4" strokeLinecap="round" />
-                    <line x1="120" y1="50" x2="120" y2="350" stroke="#1E3A8A" strokeWidth="1" strokeOpacity="0.6" />
-                    <path d="M120 350 C120 370 140 375 140 360" stroke="#1E3A8A" strokeWidth="2.5" strokeLinecap="round" />
-                    <path d="M140 360 L136 366" stroke="#1E3A8A" strokeWidth="2.5" strokeLinecap="round" />
+                    {/* Line starts at y=0 which is 800px above the section top * /}
+                    <path d="M-20 200 Q 60 100 120 0" stroke="#1E3A8A" strokeWidth="4" strokeLinecap="round" />
+                    <line x1="120" y1="0" x2="120" y2="940" stroke="#1E3A8A" strokeWidth="1" strokeOpacity="0.6" />
+                    <path d="M120 940 C120 960 140 965 140 950" stroke="#1E3A8A" strokeWidth="2.5" strokeLinecap="round" />
+                    <path d="M140 950 L136 956" stroke="#1E3A8A" strokeWidth="2.5" strokeLinecap="round" />
                 </svg>
             </div>
+             */}
 
             {/* Animated Fish */}
             <div className="absolute top-0 left-0 w-full z-40 h-64 overflow-hidden pointer-events-none">
@@ -200,14 +201,19 @@ const FoodMenu = () => {
                                             <div>
                                                 <span className="diet-badge diet-badge-veg">Veg</span>
                                                 <ul className="menu-item-text">
-                                                    <li>Rice</li><li>{isDay || !isDeluxe ? 'Chapati' : ''}</li>
-                                                    <li>{(isDay || !isDeluxe) && 'Paneer Masala'}</li>
-                                                    <li>Cauliflower Fry</li><li>Sambar</li><li>Thoran</li>
-                                                    <li>Mezhukkupuratty</li><li>{!isDay && !isDeluxe ? 'Banana Kalan' : (isDay ? 'Banana Kalan' : '')}</li>
-                                                    <li>{isDay || isDeluxe ? 'Pappadam' : 'Pappadam'}</li>
-                                                    <li>Pickle</li><li>Veg Salad</li>
-                                                    {!isDeluxe && <li>Payasam (Vermicelli)</li>}
+                                                    <li>Rice</li>
+                                                    {(isDay || !isDeluxe) && <li>Chapati</li>}
+                                                    {isDay && <li>Paneer Masala</li>}
+                                                    <li>Cauliflower Fry</li>
+                                                    <li>Sambar</li>
+                                                    <li>Thoran</li>
+                                                    <li>Mezhukkupuratty</li>
+                                                    {(isDay || !isDeluxe) && <li>Banana Kalan</li>}
                                                     {!isDay && <li>Yogurt</li>}
+                                                    <li>Pappadam</li>
+                                                    <li>Pickle</li>
+                                                    <li>Veg Salad</li>
+                                                    {!isDeluxe && <li>Payasam (Vermicelli)</li>}
                                                 </ul>
                                             </div>
                                             <div>
