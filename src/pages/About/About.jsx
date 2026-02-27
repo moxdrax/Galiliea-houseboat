@@ -1,12 +1,10 @@
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import '../../styles/Hero.css';
 import boat9 from '../../assets/Boat/boat9.avif';
 import boat2 from '../../assets/Boat/boat2.avif';
 import boat10 from '../../assets/Boat/boat10.avif';
 
-/* ─── SEO constants ─────────────────────────────────────────────────── */
-const PAGE_TITLE = 'About Us | Galilea Houseboat – Alleppey Kerala';
-const PAGE_DESCRIPTION = 'Learn about Galilea Houseboat – our heritage, vision, and the traditional Kettuvallam craftsmanship that makes every Kerala backwater cruise an unforgettable luxury experience.';
 
 /* ─── Data ──────────────────────────────────────────────────────────── */
 
@@ -15,11 +13,11 @@ const storyRows = [
         tag: 'THE JOURNEY',
         heading: 'A Vision Carved in Teak',
         image: boat2,
-        imageAlt: 'Galilea luxury houseboat gliding through Kerala backwaters',
+        imageAlt: 'Galilea luxury houseboat gliding through Alleppey Kerala backwaters',
         textFirst: false,         // image left, text right
         borderColor: 'border-royal-blue/10',
         paragraphs: [
-            `Welcome to Galilea Houseboat, where luxury meets adventure on the serene waters of Kerala.
+            `Welcome to Galilea Houseboat, the premier luxury houseboat experience on the Alleppey (Alappuzha) backwaters of Kerala.
              Our houseboat service is renowned for offering unparalleled luxury amenities reminiscent of
              star-rated hotels, earning us the prestigious title of the floating palaces of Kerala.
              Prepare to indulge in the epitome of luxury and comfort as you embark on a journey with us.`,
@@ -38,7 +36,7 @@ const storyRows = [
         tag: 'HERITAGE',
         heading: 'History of Kettuvallam',
         image: boat10,
-        imageAlt: 'Traditional Kerala kettuvallam houseboat on the backwaters',
+        imageAlt: 'Traditional Kerala Kettuvallam houseboat on the Alleppey backwaters',
         textFirst: true,          // text left, image right
         borderColor: 'border-[#C5A059]/20',
         paragraphs: [
@@ -79,21 +77,21 @@ const pillars = [
 
 const About = () => {
     useEffect(() => {
-        document.title = PAGE_TITLE;
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.setAttribute('content', PAGE_DESCRIPTION);
-
         window.scrollTo(0, 0);
     }, []);
 
     return (
         <article className="max-w-full overflow-hidden">
+            <Helmet>
+                <title>About Galilea Houseboat | Alleppey Backwaters Kerala</title>
+                <meta name="description" content="Learn about Galilea Houseboat – the best luxury houseboat experience in Alleppey, Kerala. Discover our heritage, vision, and the traditional Kettuvallam craftsmanship behind every unforgettable backwater cruise." />
+            </Helmet>
             {/* Hero */}
             <header className="relative h-[45vh] md:h-[70vh] w-full overflow-hidden mt-16 text-center">
                 <div className="w-full h-full relative">
                     <img
                         src={boat9}
-                        alt="Galilea Houseboat on the serene Kerala backwaters"
+                        alt="Galilea Houseboat on the serene Alleppey Kerala backwaters"
                         className="w-full h-full object-cover"
                         loading="eager"
                     />

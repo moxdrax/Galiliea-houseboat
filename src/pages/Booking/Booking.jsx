@@ -1,10 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import boat9 from '../../assets/Boat/boat9.avif';
 import '../../styles/Hero.css';
 import img from '../../assets/booking.jpeg';
 
-const PAGE_TITLE = 'Make Your Reservation | Galilea Houseboat Alleppey';
-const PAGE_DESCRIPTION = 'Experience the ultimate Kerala backwater voyage. Reserve your private stay on Galilea Houseboat through our professional booking concierge.';
 
 const CustomSelect = ({ label, value, options, onChange, isOpen, onToggle, inputFieldClass, inputLabelClass, id }) => {
     const getDisplayValue = () => {
@@ -61,9 +60,6 @@ const Booking = () => {
     const formRef = useRef(null);
 
     useEffect(() => {
-        document.title = PAGE_TITLE;
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.setAttribute('content', PAGE_DESCRIPTION);
         window.scrollTo(0, 0);
 
         const handleClickOutside = (event) => {
@@ -93,8 +89,12 @@ const Booking = () => {
 
     return (
         <article className="relative min-h-screen w-full flex flex-col pt-20 pb-35 lg:pt-24 lg:pb-35">
+            <Helmet>
+                <title>Book Houseboat in Alleppey | Galilea Houseboat Kerala</title>
+                <meta name="description" content="Book the best houseboat in Alleppey, Kerala. Reserve your luxury day or overnight cruise on the Alappuzha backwaters with Galilea Houseboat – premium AC rooms, authentic Kerala cuisine, and personalised service." />
+            </Helmet>
             <div className="absolute inset-0 z-0">
-                <img src={img} alt="Luxury Houseboat Background" className="w-full h-full object-cover scale-110" />
+                <img src={img} alt="Luxury Houseboat in Alleppey Kerala Backwaters" className="w-full h-full object-cover scale-110" />
                 <div className="absolute inset-0 bg-royal-blue/60 mix-blend-multiply" />
             </div>
 
@@ -115,7 +115,7 @@ const Booking = () => {
 
                                 <div>
                                     <label className={inputLabelClass} htmlFor="phone">Phone Number</label>
-                                    <input type="text" id="phone" placeholder="Enter your phone no" className={inputFieldClass} />
+                                    <input type="tel" id="phone" placeholder="Enter your phone number" className={inputFieldClass} maxLength={10} />
                                 </div>
 
                                 <div className="grid grid-cols-2 gap-4 relative z-[60]">
@@ -170,12 +170,12 @@ const Booking = () => {
                         </div>
                     </div>
 
-                    <div className="flex-1 text-center lg:text-left text-white max-w-2xl reveal-up">
+                    <div className="flex-1 text-center lg:text-left text-white max-w-2xl reveal-up mt-20 lg:mt-0">
                         <h1 className="text-5xl md:text-7xl  uppercase tracking-tight leading-tight mb-8 drop-shadow-lg">
                             MAKE YOUR RESERVATION
                         </h1>
                         <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed drop-shadow-md">
-                            Experience the serene backwaters of Alleppey on the luxuriously appointed Galilea Houseboat. From traditional Kerala delicacies to tailored voyages, we curate every moment for your perfect escape.
+                            Experience the serene backwaters of Alleppey (Alappuzha) on the luxuriously appointed Galilea Houseboat. From traditional Kerala delicacies to tailored day and overnight cruises, we curate every moment for your perfect escape.
                         </p>
                     </div>
                 </div>

@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import boat9 from '../../assets/Boat/boat9.avif';
 import '../../styles/Hero.css';
 
-const PAGE_TITLE = 'Contact Us | Galilea Houseboat Alleppey - Kerala Backwater Booking';
-const PAGE_DESCRIPTION = 'Connect with Galilea Houseboat for luxury cruise bookings in Alleppey. Reach us via phone, email, or visit our office. We are here to help you plan your perfect Kerala backwater journey.';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -29,9 +28,6 @@ const Contact = () => {
     };
 
     useEffect(() => {
-        document.title = PAGE_TITLE;
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.setAttribute('content', PAGE_DESCRIPTION);
         window.scrollTo(0, 0);
     }, []);
 
@@ -103,11 +99,15 @@ const Contact = () => {
 
     return (
         <article className="max-w-full overflow-hidden">
+            <Helmet>
+                <title>Contact | Galilea Houseboat Alleppey – Book Your Kerala Cruise</title>
+                <meta name="description" content="Contact Galilea Houseboat to book your luxury houseboat in Alleppey, Kerala. Reach us by phone, email, or visit our docking office. We will help you plan the perfect Alappuzha backwater cruise." />
+            </Helmet>
             <header className="relative h-[45vh] md:h-[70vh] w-full overflow-hidden mt-16">
                 <div className="w-full h-full relative">
                     <img
                         src={boat9}
-                        alt="Galilea Houseboat on the serene Kerala backwaters"
+                        alt="Galilea Houseboat on the serene Alleppey Kerala backwaters"
                         className="w-full h-full object-cover"
                         loading="eager"
                     />

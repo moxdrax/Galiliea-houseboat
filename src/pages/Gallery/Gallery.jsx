@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { Helmet } from 'react-helmet-async';
 import '../../styles/Hero.css';
 
 // Image Imports
@@ -17,22 +18,19 @@ import toilet from '../../assets/Boat/toilet.avif';
 // import sceneries1 from '../../assets/Boat/sceneries1.avif';
 // import sceneries2 from '../../assets/Boat/sceneries2.avif';
 
-/* ─── SEO constants ─────────────────────────────────────────────────── */
-const PAGE_TITLE = 'Gallery | Galilea Houseboat – Visual Journey through Kerala Backwaters';
-const PAGE_DESCRIPTION = 'Explore the visual beauty of Galilea Houseboat through our gallery. See our luxury interiors, traditional Kettuvallam architecture, and stunning sceneries of Alleppey backwaters.';
 
 const GALLERY_DATA = [
-    { src: boat1, alt: 'Galilea Houseboat Exterior Front', category: 'exterior' },
-    { src: boat6, alt: 'Galilea Houseboat Side View', category: 'exterior' },
-    { src: boat8, alt: 'Galilea Houseboat Exterior Front', category: 'exterior' },
-    { src: upperdeck, alt: 'Galilea Houseboat Upper Deck View', category: 'interiors' },
-    { src: boat5, alt: 'Galilea Houseboat Interior View', category: 'interiors' },
-    { src: boat4, alt: 'Galilea Houseboat Interior View', category: 'interiors' },
-    { src: dining1, alt: 'Galilea Houseboat Dining Area', category: 'dining' },
-    { src: dining2, alt: 'Galilea Houseboat Interior View', category: 'interiors' },
-    { src: room1, alt: 'Galilea Houseboat Bedroom', category: 'rooms' },
-    { src: room2, alt: 'Galilea Houseboat Bedroom', category: 'rooms' },
-    { src: toilet, alt: 'Galilea Houseboat Bathroom', category: 'rooms' },
+    { src: boat1, alt: 'Alleppey Houseboat Exterior – Luxury Houseboat in Alleppey Kerala', category: 'exterior' },
+    { src: boat6, alt: 'Alleppey Houseboat Side View on Alleppey Backwaters', category: 'exterior' },
+    { src: boat8, alt: 'Alleppey Houseboat Exterior on Kerala Backwaters Alleppey', category: 'exterior' },
+    { src: upperdeck, alt: 'Alleppey Houseboat Upper Deck View – Alappuzha Backwaters', category: 'interiors' },
+    { src: boat5, alt: 'Alleppey Houseboat Interior View', category: 'interiors' },
+    { src: boat4, alt: 'Alleppey Houseboat Interior View', category: 'interiors' },
+    { src: dining1, alt: 'Alleppey Houseboat Dining Area', category: 'dining' },
+    { src: dining2, alt: 'Alleppey Houseboat Interior View', category: 'interiors' },
+    { src: room1, alt: 'Alleppey Houseboat Bedroom', category: 'rooms' },
+    { src: room2, alt: 'Alleppey Houseboat Bedroom', category: 'rooms' },
+    { src: toilet, alt: 'Alleppey Houseboat Bathroom', category: 'rooms' },
     // { src: sceneries1, alt: 'Galilea Houseboat Front View', category: 'sceneries' },
     // { src: sceneries2, alt: 'Galilea Houseboat Back View', category: 'sceneries' },
 ];
@@ -51,9 +49,6 @@ const Gallery = () => {
     const carouselRef = useRef(null);
 
     useEffect(() => {
-        document.title = PAGE_TITLE;
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.setAttribute('content', PAGE_DESCRIPTION);
         window.scrollTo(0, 0);
     }, []);
 
@@ -89,12 +84,16 @@ const Gallery = () => {
 
     return (
         <article className="max-w-full overflow-hidden">
+            <Helmet>
+                <title>Gallery | Galilea Houseboat Alleppey – Kerala Backwaters</title>
+                <meta name="description" content="Explore Alleppey Houseboat through our gallery. See luxury interiors, traditional Kettuvallam architecture, and stunning sceneries of the Alleppey backwaters, Kerala." />
+            </Helmet>
             {/* Hero */}
             <header className="relative h-[45vh] md:h-[70vh] w-full overflow-hidden mt-16">
                 <div className="w-full h-full relative">
                     <img
                         src={boat9}
-                        alt="Galilea Houseboat on the serene Kerala backwaters"
+                        alt="Galilea Houseboat on the serene Alleppey Kerala backwaters"
                         className="w-full h-full object-cover"
                         loading="eager"
                     />
@@ -107,7 +106,7 @@ const Gallery = () => {
                             </span>
                             <h1
                                 className="text-5xl md:text-8xl   text-white mb-6 drop-shadow-2xl reveal-up"
-                                style={{ animationDelay: '0.2s', opacity: 0  }}>
+                                style={{ animationDelay: '0.2s', opacity: 0 }}>
                                 Gallery
                             </h1>
                             <div className="flex items-center justify-center gap-4 fade-in-delayed">

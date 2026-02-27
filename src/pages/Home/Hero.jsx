@@ -1,6 +1,5 @@
 import '../../styles/Hero.css';
 import { useState, useEffect, useRef, useCallback } from 'react';
-
 import boat1 from '../../assets/Boat/boat1.avif';
 import boat6 from '../../assets/Boat/boat6.avif';
 import boat4 from '../../assets/Boat/boat4.avif';
@@ -8,12 +7,9 @@ import boat4 from '../../assets/Boat/boat4.avif';
 const heroSlides = [
     { src: boat1, alt: 'Galilea premium houseboat sailing on the Alleppey backwaters at golden hour, Kerala' },
     { src: boat6, alt: 'Scenic Kerala backwater view from the upper deck of Galilea Houseboat, Alleppey' },
-    { src: boat4, alt: 'Lush Kerala backwater landscape seen from Galilea Houseboat during a sunset cruise' },
+    { src: boat4, alt: 'Lush Alleppey backwater landscape seen from Galilea Houseboat during a sunset cruise, Kerala' },
 ];
 
-/* ─── SEO constants ─────────────────────────────────────────────────── */
-const PAGE_TITLE = 'Home | Galilea Houseboat - Premium Houseboat Experience in Alleppey Backwaters, Kerala';
-const PAGE_DESCRIPTION = 'Book the ultimate premium houseboat cruise in Alleppey, Kerala with Galilea Houseboat. Experience premium AC stays, authentic Kerala cuisine, and serene backwater views.';
 
 const Hero = () => {
     const [current, setCurrent] = useState(0);
@@ -24,9 +20,7 @@ const Hero = () => {
     }, []);
 
     useEffect(() => {
-        document.title = PAGE_TITLE;
-        const metaDesc = document.querySelector('meta[name="description"]');
-        if (metaDesc) metaDesc.setAttribute('content', PAGE_DESCRIPTION);
+        window.scrollTo(0, 0);
     }, []);
 
     useEffect(() => {
@@ -78,9 +72,9 @@ const Hero = () => {
                                 className="text-white font-bold tracking-[0.5em] text-[10px] md:text-[12px] uppercase mb-4 block drop-shadow-sm reveal-up"
                                 style={{ animationDelay: "0.2s", opacity: 0 }}>KERALA
                                 BACKWATERS</span>
-                            <h1 className="text-5xl md:text-8xl   text-white mb-6 drop-shadow-2xl fade-in-delayed"
+                            <h1 className="text-4xl md:text-7xl   text-white mb-6 drop-shadow-2xl fade-in-delayed"
                                 style={{ animationDelay: "0.2s" }}>
-                                The Golden Voyage
+                                The Best Houseboat in Alleppey Backwaters
                             </h1>
                         </div>
                     </div>
