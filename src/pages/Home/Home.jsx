@@ -24,8 +24,8 @@ export default function Home() {
             <Hero />
             <Introduction />
             <Services />
-            <FoodMenu />
             <Destination />
+            <FoodMenu />
             <Reviews />
         </>
     );
