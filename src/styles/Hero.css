@@ -240,7 +240,7 @@
         }
 
         .menu-category-title {
-            
+
             font-weight: 700;
             font-size: 14px;
             color: #1E3A8A;
@@ -261,7 +261,7 @@
         }
 
         .menu-item-text {
-            
+
             font-size: 15px;
             color: #404040;
             line-height: 1.625;
@@ -293,7 +293,7 @@
 
         .diet-badge {
             font-size: 10px;
-            
+
             letter-spacing: 0.1em;
             text-transform: uppercase;
             margin-bottom: 0.25rem;
@@ -433,4 +433,37 @@
                 height: 60px;
                 min-height: 60px;
             }
+        }
+
+        /* Menu Transitions */
+        @keyframes menu-fade-in {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .menu-animate-in {
+            animation: menu-fade-in 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        @keyframes hook-bob {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(15px);
+            }
+        }
+
+        .hook-animate {
+            animation: hook-bob 3s ease-in-out infinite;
         }

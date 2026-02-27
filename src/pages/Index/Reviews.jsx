@@ -25,6 +25,7 @@ const Reviews = () => {
     const autoRef = useRef(null);
     const snapRef = useRef(null);
     const touchStartRef = useRef(null);
+    const mouseDownRef = useRef(false);
 
 
     const translateX = `${(-(pos / looped.length) * 100).toFixed(6)}%`;
@@ -87,7 +88,7 @@ const Reviews = () => {
     };
 
     const handleTouchEnd = (e) => {
-        if (!touchStartRef.current) return;
+        if (touchStartRef.current === null) return;
         const touchEnd = e.changedTouches[0].clientX;
         const diff = touchStartRef.current - touchEnd;
 
@@ -112,6 +113,43 @@ const Reviews = () => {
         touchStartRef.current = null;
     };
 
+    const handleMouseDown = (e) => {
+        mouseDownRef.current = true;
+        touchStartRef.current = e.clientX;
+    };
+
+    const handleMouseUp = (e) => {
+        if (!mouseDownRef.current) return;
+        const mouseEnd = e.clientX;
+        const diff = touchStartRef.current - mouseEnd;
+
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                const next = posRef.current + 1;
+                posRef.current = next;
+                setAnimated(true);
+                setPos(next);
+                setDotIdx(((next % N) + N) % N);
+                scheduleSnap();
+            } else {
+                const prev = posRef.current - 1;
+                posRef.current = prev;
+                setAnimated(true);
+                setPos(prev);
+                setDotIdx(((prev % N) + N) % N);
+                scheduleSnap();
+            }
+            startAuto();
+        }
+        mouseDownRef.current = false;
+        touchStartRef.current = null;
+    };
+
+    const handleMouseLeave = () => {
+        mouseDownRef.current = false;
+        touchStartRef.current = null;
+    };
+
 
     return (
         <article className="max-w-full overflow-hidden">
@@ -132,14 +170,19 @@ const Reviews = () => {
                     <div className="overflow-hidden">
                         <div
                             className="touch-pan-y"
+                            onTouchStart={handleTouchStart}
+                            onTouchEnd={handleTouchEnd}
+                            onMouseDown={handleMouseDown}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
                             style={{
                                 display: 'flex',
                                 width: TRACK_W,
                                 transform: `translateX(${translateX})`,
                                 transition: animated ? `transform ${TRANSITION_MS}ms ease-in-out` : 'none',
+                                cursor: 'grab',
+                                userSelect: 'none',
                             }}
-                            onTouchStart={handleTouchStart}
-                            onTouchEnd={handleTouchEnd}
                         >
 
 
@@ -170,7 +213,7 @@ const Reviews = () => {
                                         </div>
 
                                         {/* Review text */}
-                                        <p className="text-xl md:text-2xl  text-neutral-600 dark:text-neutral-300 mb-10 leading-relaxed max-w-3xl">
+                                        <p className="text-[15px] md:text-[15px]  text-neutral-600 dark:text-neutral-300 mb-10 leading-relaxed max-w-3xl">
                                             {review.text}
                                         </p>
 

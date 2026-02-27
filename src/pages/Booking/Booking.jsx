@@ -32,7 +32,7 @@ const CustomSelect = ({ label, value, options, onChange, isOpen, onToggle, input
             </button>
 
             {isOpen && (
-                <div role="listbox" className="absolute z-[100] mt-2 w-full bg-white border border-primary/10 rounded-lg shadow-2xl overflow-hidden max-h-80 overflow-y-auto animate-fade-in ring-1 ring-black/5">
+                <div role="listbox" className="absolute z-[100] mt-2 w-full bg-white border border-primary/10 rounded-lg shadow-2xl overflow-hidden max-h-48 overflow-y-auto animate-fade-in ring-1 ring-black/5">
                     {options.map((opt) => (
                         <button
                             key={opt}
@@ -54,8 +54,7 @@ const CustomSelect = ({ label, value, options, onChange, isOpen, onToggle, input
 const Booking = () => {
     const [counts, setCounts] = useState({
         rooms: "1",
-        adults: "2",
-        childBelow5: "0",
+        adults: "0",
         childAbove5: "0"
     });
     const [activeDropdown, setActiveDropdown] = useState(null);
@@ -90,16 +89,16 @@ const Booking = () => {
     const today = new Date().toISOString().split('T')[0];
 
     const range0To9 = [...Array(10)].map((_, i) => i);
-    const range1To16 = [...Array(16)].map((_, i) => i + 1);
+    const range1To16 = [...Array(4)].map((_, i) => i + 1);
 
     return (
-        <article className="relative min-h-screen w-full flex flex-col pt-32 pb-48 lg:pt-40 lg:pb-64">
+        <article className="relative min-h-screen w-full flex flex-col pt-20 pb-48 lg:pt-24 lg:pb-64">
             <div className="absolute inset-0 z-0">
                 <img src={img} alt="Luxury Houseboat Background" className="w-full h-full object-cover scale-110" />
                 <div className="absolute inset-0 bg-royal-blue/60 mix-blend-multiply" />
             </div>
 
-            <div className="container mx-auto px-6 relative z-10">
+            <div className="container mx-auto px-6 relative z-10 ">
                 <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
                     <div className="w-full max-w-md animate-fade-in-up">
                         <div className="bg-white p-8 md:p-12 rounded-lg shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)]">
@@ -113,18 +112,17 @@ const Booking = () => {
                                     <input type="email" id="email" placeholder="Enter your email" className={inputFieldClass} />
                                 </div>
 
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <label className={inputLabelClass} htmlFor="phone">Phone Number</label>
-                                        <input type="text" id="phone" placeholder="Enter your phone no" className={inputFieldClass} />
-                                    </div>
+
+                                <div>
+                                    <label className={inputLabelClass} htmlFor="phone">Phone Number</label>
+                                    <input type="text" id="phone" placeholder="Enter your phone no" className={inputFieldClass} />
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-4 relative z-[60]">
                                     <div>
                                         <label className={inputLabelClass} htmlFor="check-in">Arrival Date</label>
                                         <input type="date" id="check-in" min={today} className={inputFieldClass} />
                                     </div>
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-4 relative z-[60]">
                                     <CustomSelect
                                         label="Rooms"
                                         id="rooms-select"
@@ -136,6 +134,9 @@ const Booking = () => {
                                         inputFieldClass={inputFieldClass}
                                         inputLabelClass={inputLabelClass}
                                     />
+                                </div>
+
+                                <div className="grid grid-cols-2 gap-4 relative z-[55]">
                                     <CustomSelect
                                         label="Adults"
                                         id="adults-select"
@@ -144,20 +145,6 @@ const Booking = () => {
                                         isOpen={activeDropdown === 'adults'}
                                         onToggle={() => handleToggle('adults')}
                                         onChange={(val) => handleChange('adults', val)}
-                                        inputFieldClass={inputFieldClass}
-                                        inputLabelClass={inputLabelClass}
-                                    />
-                                </div>
-
-                                <div className="grid grid-cols-2 gap-4 relative z-[55]">
-                                    <CustomSelect
-                                        label="Children below 5"
-                                        id="child-below-select"
-                                        value={counts.childBelow5}
-                                        options={range0To9}
-                                        isOpen={activeDropdown === 'childBelow5'}
-                                        onToggle={() => handleToggle('childBelow5')}
-                                        onChange={(val) => handleChange('childBelow5', val)}
                                         inputFieldClass={inputFieldClass}
                                         inputLabelClass={inputLabelClass}
                                     />

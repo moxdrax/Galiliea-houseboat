@@ -87,7 +87,7 @@ const Hero = () => {
                     <div className="pb-24 sm:pb-32 lg:pb-40 flex justify-center">
                         <div className="hidden sm:flex flex-col sm:flex-row gap-6 justify-center items-center pointer-events-auto">
                             <a className="nav-link text-[10px] font-bold tracking-[0.2em] transition-colors text-white fade-in-delayed"
-                                href="#fleet">
+                                href="#destinations">
                                 EXPLORE THE WATERWAY
                             </a>
                         </div>

@@ -36,6 +36,7 @@ const Services = () => {
     const autoRef = useRef(null);
     const snapRef = useRef(null);
     const touchStartRef = useRef(null);
+    const mouseDownRef = useRef(false);
 
 
     // ── geometry ──────────────────────────────────────────────────────────────
@@ -111,7 +112,7 @@ const Services = () => {
     };
 
     const handleTouchEnd = (e) => {
-        if (!touchStartRef.current) return;
+        if (touchStartRef.current === null) return;
         const touchEnd = e.changedTouches[0].clientX;
         const diff = touchStartRef.current - touchEnd;
 
@@ -133,6 +134,41 @@ const Services = () => {
             }
             startAuto(); // reset autoplay
         }
+        touchStartRef.current = null;
+    };
+
+    const handleMouseDown = (e) => {
+        mouseDownRef.current = true;
+        touchStartRef.current = e.clientX;
+    };
+
+    const handleMouseUp = (e) => {
+        if (!mouseDownRef.current) return;
+        const mouseEnd = e.clientX;
+        const diff = touchStartRef.current - mouseEnd;
+
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                const next = posRef.current + 1;
+                posRef.current = next;
+                setAnimated(true);
+                setPos(next);
+                scheduleSnap();
+            } else {
+                const prev = posRef.current - 1;
+                posRef.current = prev;
+                setAnimated(true);
+                setPos(prev);
+                scheduleSnap();
+            }
+            startAuto();
+        }
+        mouseDownRef.current = false;
+        touchStartRef.current = null;
+    };
+
+    const handleMouseLeave = () => {
+        mouseDownRef.current = false;
         touchStartRef.current = null;
     };
 
@@ -160,14 +196,19 @@ const Services = () => {
                     <div className="overflow-hidden">
                         <div
                             className="touch-pan-y"
+                            onTouchStart={handleTouchStart}
+                            onTouchEnd={handleTouchEnd}
+                            onMouseDown={handleMouseDown}
+                            onMouseUp={handleMouseUp}
+                            onMouseLeave={handleMouseLeave}
                             style={{
                                 display: 'flex',
                                 width: TRACK_W,
                                 transform: `translateX(${translateX})`,
                                 transition: animated ? 'transform 0.5s ease-in-out' : 'none',
+                                cursor: 'grab',
+                                userSelect: 'none',
                             }}
-                            onTouchStart={handleTouchStart}
-                            onTouchEnd={handleTouchEnd}
                         >
 
 
