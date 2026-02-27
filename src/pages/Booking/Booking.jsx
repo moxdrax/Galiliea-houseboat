@@ -92,7 +92,7 @@ const Booking = () => {
     const range1To16 = [...Array(4)].map((_, i) => i + 1);
 
     return (
-        <article className="relative min-h-screen w-full flex flex-col pt-20 pb-48 lg:pt-24 lg:pb-64">
+        <article className="relative min-h-screen w-full flex flex-col pt-20 pb-35 lg:pt-24 lg:pb-35">
             <div className="absolute inset-0 z-0">
                 <img src={img} alt="Luxury Houseboat Background" className="w-full h-full object-cover scale-110" />
                 <div className="absolute inset-0 bg-royal-blue/60 mix-blend-multiply" />
